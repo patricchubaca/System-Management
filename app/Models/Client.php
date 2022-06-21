@@ -36,5 +36,6 @@ class Client extends Model
         'email2',
         'cargoSetor2'    
 
+
     ];
 }

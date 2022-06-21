@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Models\Client;
+
 class ClientController extends Controller
 {
     /**
@@ -11,9 +13,31 @@ class ClientController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+     public function index()
     {
-        //
+        $all = Client::all();
+
+        foreach ($all as $key => $value) {
+
+            $registro = [];
+
+            $registro['id'] = $value['id'];
+            $registro['inscricaoEstadual'] = $value['inscricaoEstadual'];
+            $registro['uasg'] = $value['uasg'];
+            $registro['cnpj'] = $value['cnpj'];
+
+            $id = $value['id'];
+
+           $registro['button'] = '<button class="button is-info is-light" onclick="visualisarUsuario('.$id.')"
+            id="modal"><i clss="fa-solid fa-cabinet-filing"></i><i class="fa-solid fa-folder-closed"></i></button>
+
+            <button class="button is-danger is-light" onclick="deletarUsuario('.$id.')"><i class="fa-solid fa-trash-can"></i></button>';
+            $data[] = $registro;
+
+
+        }
+
+        return ['data'=>$data];   
     }
 
     /**

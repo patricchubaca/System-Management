@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Models\Provider;
+
 class ProviderController extends Controller
 {
     /**
@@ -13,8 +15,30 @@ class ProviderController extends Controller
      */
     public function index()
     {
-        //
+        $all = Client::all();
+
+
+        foreach ($all as $key => $value) {
+
+            $registro = [];
+
+            $registro['id'] = $value['id'];
+            $registro['client'] = $value['client'];
+            $registro['uasg'] = $value['tipo'];
+            $registro['cnpj'] = $value['formula'];
+
+            $id = $value['id'];
+
+            $registro['button'] = '<button class="button is-info is-light" onclick="visualisarUsuario('.$id.')" id="modal" data-bs-toggle="modal" data-bs-target="#exampleModal">Editar</button>
+
+            <button class="button is-danger is-light" onclick="deletarUsuario('.$id.')">Delete</button>';
+            $data[] = $registro;
+        }
+
+        return ['data'=>$data];   
     }
+
+    
 
     /**
      * Show the form for creating a new resource.
