@@ -55,7 +55,7 @@
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <li class="nav-item">
-            <a href="pages/widgets.html" class="nav-link">
+            <a href="{{route('dashboard')}}" class="nav-link">
               <i class="fa-solid fa-chart-line"></i>
               <p>
                 Dashboard
@@ -116,6 +116,15 @@
                     </p>
                   </a>
                 </li>
+                  <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                <li class="nav-item">
+                  <a href="pages/widgets.html" class="nav-link">
+                   <i class="fa-solid fa-house"></i>
+                   <p>
+                    Empresas Cadastradas
+                  </p>
+                </a>
+              </li>
                 <!-- /.sidebar-menu -->
               </div>
               <!-- /.sidebar -->

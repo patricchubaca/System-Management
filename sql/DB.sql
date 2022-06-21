@@ -59,8 +59,8 @@ CREATE TABLE IF NOT EXISTS `fornecedores` (
 )ENGINE=MyISAM AUTO_INCREMENT=0 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Table: Portal
-DROP TABLE IF EXISTS `portal`;
-CREATE TABLE IF NOT EXISTS `portal` (
+DROP TABLE IF EXISTS `portais`;
+CREATE TABLE IF NOT EXISTS `portais` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `portal` varchar(220) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `site` varchar(220) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -70,8 +70,10 @@ CREATE TABLE IF NOT EXISTS `portal` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+
+-- Table: Produtos
 DROP TABLE IF EXISTS `produtos`;
-CREATE TABLE IF NOT EXISTS `portal` (
+CREATE TABLE IF NOT EXISTS `produtos` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `produto` varchar(220) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `marca` varchar (220) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
