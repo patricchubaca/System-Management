@@ -47,7 +47,7 @@ class ClientController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**
@@ -58,7 +58,7 @@ class ClientController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        echo "Hellow World";
     }
 
     /**

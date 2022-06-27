@@ -8,10 +8,14 @@
     <main>
     </div>
     <div class="col-md-7 col-lg-12 mt-1 border">
-      
-     <form class="needs-validation  px-5 py-1 mt-1" method="POST" action="{{route('createCar')}}">
+
+     <form class="needs-validation  px-5 py-1 mt-1" method="POST" action="{{route('dashboard')}}">
       @csrf
-      <h2 class="mt-5">Dados do veiculo</h2>
+           <div class="mb-5">
+        <div class="alert border" role="alert">
+         <h1 class="mt-3">Marcas</h1>
+       </div>
+     </div>
       <div class="row g-3 mt-3">
         <div class="col-sm-6">
           <label for="firstName" class="form-label">Marca</label>
@@ -28,8 +32,6 @@
             Valid last name is required.
           </div>
         </div>
-
-
 
         <div class="col-md-5">
           <label for="country" class="form-label">Placa</label>
@@ -112,9 +114,6 @@
             Valid last name is required.
           </div>
         </div>
-
-
-
         <div class="col-md-5">
           <label for="country" class="form-label">Quitação</label>
           <input type="text" class="form-control" id="lastName" placeholder="30 X 1220,00" name="quitacao" value="" required>
@@ -122,7 +121,6 @@
             Valid last name is required.
           </div>
         </div>
-
         <div class="col-md-4">
           <label for="state" class="form-label">Multa</label>
           <input type="text" class="form-control" id="lastName" placeholder="Multas vinculadas ao Veiculo" value="" name="multa" required>

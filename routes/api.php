@@ -20,4 +20,6 @@ use App\Http\Controllers\ProviderController;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) { return $request->user(); });
 
 
+
+##################### Client #########################
 Route::get('/client', [ClientController::class, 'index']);

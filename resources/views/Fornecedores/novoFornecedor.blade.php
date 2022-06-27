@@ -9,9 +9,11 @@
     </div>
     <div class="col-md-7 col-lg-12 mt-1 border">
       
-     <form class="needs-validation  px-5 py-1 mt-1" method="POST" action="{{route('createCar')}}">
+     <form class="needs-validation  px-5 py-1 mt-1" method="POST" action="{{route('dashboard')}}">
       @csrf
-      <h2 class="mt-5">Dados do veiculo</h2>
+      <div class="alert border" role="alert">
+      <h1 class="mx-2 my-2">Fornecedor</h1>
+    </div>
       <div class="row g-3 mt-3">
         <div class="col-sm-6">
           <label for="firstName" class="form-label">Marca</label>

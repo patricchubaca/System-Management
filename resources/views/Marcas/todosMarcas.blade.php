@@ -6,35 +6,22 @@
   <div class="row">
    <div class="mb-5">
     <div class="alert border" role="alert">
-      <h1 class="mx-2 my-2">Fornecedores</h1>
+      <h1 class="mx-2 my-2">Marcas</h1>
     </div>
     <div class="float-end mr-5">
-      <a href="{{route('createFornecedores')}}" type="button" class="button is-solid is-medium">
-        Fornecedor
+      <a href="{{route('createMarcas')}}" type="button" class="button is-solid is-medium">
+        Marca
         <i class="fa-solid fa-person-circle-plus ml-3">
         </i>
       </a>
     </div>
-  </div>
-  <div>
-    @can('is_admin')
-
-    <div> SOU O JOBS </div>
-
-    @else
-
-    <div>Não SOU O JOBS :c</div>
-
-    @endif
-
-  </div>    
+  </div>      
 </div>
+
 <table class="table" id="tableUsuarios">
   <thead>
     <tr>
-      <th scope="col">inscricao Estadual</th>
-      <th scope="col">UASG</th>
-      <th scope="col">CNPJ</th>
+      <th scope="col">Marca</th>
       <th scope="col">Edit | Delete</th>
     </tr>
   </thead>
@@ -50,8 +37,6 @@
    $('#tableUsuarios').DataTable( {
     "ajax": "/api/client",
     "columns": [
-    {"data":"inscricaoEstadual" },
-    {"data":"uasg" },
     {"data":"cnpj" },
     {"data":"button" }
     ]

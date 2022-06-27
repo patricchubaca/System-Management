@@ -7,12 +7,13 @@
   <div class="container ">
     <main>
     </div>
-    <div class="col-md-7 col-lg-12 mt-1 border">
-      
-     <form class="needs-validation  px-5 py-1 mt-1" method="POST" action="{{route('createCar')}}">
+    <div class="col-md-7 col-lg-12 mt-5 border">
+     <form class="needs-validation  px-5 py-1 mt-1" method="POST" action="">
       @csrf
-      <h2 class="mt-5">Dados do veiculo</h2>
-      <div class="row g-3 mt-3">
+      <div class="mb-5">
+        <h1 class="mt-5">Canais de Compras</h1>
+      </div>
+      <div class="row g-3 mt-5">
         <div class="col-sm-6">
           <label for="firstName" class="form-label">Marca</label>
           <input type="text" class="form-control" id="firstName" placeholder="Mercedes-benz Classe A" name="marca" required>
@@ -20,7 +21,6 @@
             Valid first name is required.
           </div>
         </div>
-
         <div class="col-sm-6">
           <label for="lastName" class="form-label">Modelo</label>
           <input type="text" class="form-control" id="lastName" placeholder="Mercedes-Benz" value="" name="modelo" required>
@@ -28,9 +28,6 @@
             Valid last name is required.
           </div>
         </div>
-
-
-
         <div class="col-md-5">
           <label for="country" class="form-label">Placa</label>
           <input type="text" class="form-control" id="lastName" placeholder="BRZ7S19" value="" name="placa" required>
@@ -38,7 +35,6 @@
             Valid last name is required.
           </div>
         </div>
-
         <div class="col-md-4">
           <label for="state" class="form-label">Cor</label>
           <input type="text" class="form-control" id="lastName" placeholder="Branco" value="" name="cor" required>
@@ -112,8 +108,6 @@
             Valid last name is required.
           </div>
         </div>
-
-
 
         <div class="col-md-5">
           <label for="country" class="form-label">Quitação</label>

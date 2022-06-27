@@ -9,12 +9,16 @@
     </div>
     <div class="col-md-7 col-lg-12 mt-1 border">
       
-     <form class="needs-validation  px-5 py-1 mt-1" method="POST" action="{{route('createCar')}}">
+     <form class="needs-validation  px-5 py-1 mt-1" method="POST" action="{{route('dashboard')}}">
       @csrf
-      <h2 class="mt-5">Dados do veiculo</h2>
+           <div class="mb-5">
+        <div class="alert border" role="alert">
+         <h1 class="mt-3">Portais de Compras</h1>
+       </div>
+     </div>
       <div class="row g-3 mt-3">
         <div class="col-sm-6">
-          <label for="firstName" class="form-label">Marca</label>
+          <label for="firstName" class="form-label">Portal</label>
           <input type="text" class="form-control" id="firstName" placeholder="Mercedes-benz Classe A" name="marca" required>
           <div class="invalid-feedback">
             Valid first name is required.
@@ -22,17 +26,15 @@
         </div>
 
         <div class="col-sm-6">
-          <label for="lastName" class="form-label">Modelo</label>
+          <label for="lastName" class="form-label">Site</label>
           <input type="text" class="form-control" id="lastName" placeholder="Mercedes-Benz" value="" name="modelo" required>
           <div class="invalid-feedback">
             Valid last name is required.
           </div>
         </div>
 
-
-
         <div class="col-md-5">
-          <label for="country" class="form-label">Placa</label>
+          <label for="country" class="form-label">Login</label>
           <input type="text" class="form-control" id="lastName" placeholder="BRZ7S19" value="" name="placa" required>
           <div class="invalid-feedback">
             Valid last name is required.
@@ -40,7 +42,7 @@
         </div>
 
         <div class="col-md-4">
-          <label for="state" class="form-label">Cor</label>
+          <label for="state" class="form-label">Senha</label>
           <input type="text" class="form-control" id="lastName" placeholder="Branco" value="" name="cor" required>
           <div class="invalid-feedback">
             Valid last name is required.
