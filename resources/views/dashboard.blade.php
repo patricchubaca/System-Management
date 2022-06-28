@@ -46,6 +46,8 @@
   </div>
   <!-- ./wrapper -->
 
+  <script type="text/javascript" src="/js/cepClientes"></script>
+
   <script type="text/javascript" src="https://cdn.datatables.net/v/dt/jq-3.6.0/dt-1.11.5/datatables.min.js"></script>
 
   <script src="https://adminlte.io/themes/v3/plugins/jquery/jquery.min.js"></script>

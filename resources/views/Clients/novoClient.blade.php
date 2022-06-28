@@ -71,7 +71,7 @@
       <div class="row g-3 mt-4">
         <div class="col-sm-2">
           <label for="firstName" class="form-label">CEP</label>
-          <input type="text" class="form-control" id="firstName" placeholder="83507-382" name="cep" value="" required>
+          <input type="text" class="form-control" placeholder="83507-382" name="cep" required>
           <div class="invalid-feedback">
             Valid first name is required.
           </div>

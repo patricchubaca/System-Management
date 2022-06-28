@@ -64,7 +64,7 @@
       <div class="row g-3 mt-4">
         <div class="col-sm-2">
           <label for="firstName" class="form-label">CEP</label>
-          <input type="number" class="form-control" placeholder="83507-382" name="cepFornecedor" required>
+          <input type="text" class="form-control"  placeholder="83507-382" name="cep" required>
           <div class="invalid-feedback">
             Valid first name is required.
           </div>
@@ -72,14 +72,14 @@
 
         <div class="col-sm-4">
           <label for="lastName" class="form-label">Rua</label>
-          <input type="text" class="form-control" placeholder="Avenida Sete de Setembro" name="ruaFornecedor" required>
+          <input type="text" class="form-control" placeholder="Avenida Sete de Setembro" name="rua" required>
           <div class="invalid-feedback">
             Valid last name is required.
           </div>
         </div>
         <div class="col-sm-4">
           <label for="country" class="form-label">Bairro</label>
-          <input type="text" class="form-control" id="lastName" placeholder="Água verde" name="bairroFornecedor" required>
+          <input type="text" class="form-control" id="lastName" placeholder="Água verde" name="bairro" required>
           <div class="invalid-feedback">
             Valid last name is required.
           </div>
@@ -87,7 +87,7 @@
 
         <div class="col-md-4">
           <label for="state" class="form-label">Cidade</label>
-          <input type="text" class="form-control" id="lastName" placeholder="Curitiba" value="" name="cidadeFornecedor" required>
+          <input type="text" class="form-control" id="lastName" placeholder="Curitiba" name="cidade" required>
           <div class="invalid-feedback">
             Valid last name is required.
           </div>
