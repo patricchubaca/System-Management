@@ -8,42 +8,86 @@
     <main>
     </div>
     <div class="col-md-7 col-lg-12 mt-1 border">
-      
-     <form class="needs-validation  px-5 py-1 mt-1" method="POST" action="{{route('dashboard')}}">
+
+     <form class="needs-validation  px-5 py-1 mt-1" method="POST" action="{{route('storeProvider')}}">
       @csrf
       <div class="alert border" role="alert">
-      <h1 class="mx-2 my-2">Fornecedor</h1>
-    </div>
+             <h1 class="mx-2 my-2">Fornecedor</h1>
+      </div>
+  
       <div class="row g-3 mt-3">
-        <div class="col-sm-6">
-          <label for="firstName" class="form-label">Marca</label>
-          <input type="text" class="form-control" id="firstName" placeholder="Mercedes-benz Classe A" name="marca" required>
+        <div class="col-sm-8">
+          <label for="firstName" class="form-label">Fornecedor</label>
+          <input type="text" class="form-control" id="firstName" placeholder="SOLIDSTEEL" name="fornecedor" required>
           <div class="invalid-feedback">
             Valid first name is required.
           </div>
         </div>
 
-        <div class="col-sm-6">
-          <label for="lastName" class="form-label">Modelo</label>
-          <input type="text" class="form-control" id="lastName" placeholder="Mercedes-Benz" value="" name="modelo" required>
+        <div class="col-sm-4">
+          <label for="lastName" class="form-label">CNPJ</label>
+          <input type="number" class="form-control" id="lastName" placeholder="21.474.350/0001-60" value="" name="cnpj" required>
           <div class="invalid-feedback">
             Valid last name is required.
           </div>
         </div>
 
-
+        <div class="col-md-3">
+          <label for="zip" class="form-label">Inscrição Estadual</label>
+          <input type="text" class="form-control" id="zip" placeholder="388.108.598.269" name="inscricaoEstadual" required>
+          <div class="invalid-feedback">
+            Zip code required.
+          </div>
+        </div>
 
         <div class="col-md-5">
-          <label for="country" class="form-label">Placa</label>
-          <input type="text" class="form-control" id="lastName" placeholder="BRZ7S19" value="" name="placa" required>
+          <label for="country" class="form-label">Observações</label>
+          <input type="text" class="form-control" id="lastName" placeholder="Informações adicionais ?" name="observacoes" required>
+          <div class="invalid-feedback">
+            Valid last name is required.
+          </div>
+        </div>
+
+        <div class="col-md-2">
+          <label for="state" class="form-label">Isento ?</label>
+          <input type="text" class="form-control" id="lastName" placeholder="SIM" value="" name="isento" required>
+          <div class="invalid-feedback">
+            Valid last name is required.
+          </div>
+          <div class="invalid-feedback">
+            Please provide a valid state.
+          </div>
+        </div>
+      </div>
+      <hr class="my-4">
+      <h2 class="mb-3 mt-5">Endereço</h2>
+      <div class="row g-3 mt-4">
+        <div class="col-sm-2">
+          <label for="firstName" class="form-label">CEP</label>
+          <input type="number" class="form-control" placeholder="83507-382" name="cepFornecedor" required>
+          <div class="invalid-feedback">
+            Valid first name is required.
+          </div>
+        </div>
+
+        <div class="col-sm-4">
+          <label for="lastName" class="form-label">Rua</label>
+          <input type="text" class="form-control" placeholder="Avenida Sete de Setembro" name="ruaFornecedor" required>
+          <div class="invalid-feedback">
+            Valid last name is required.
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <label for="country" class="form-label">Bairro</label>
+          <input type="text" class="form-control" id="lastName" placeholder="Água verde" name="bairroFornecedor" required>
           <div class="invalid-feedback">
             Valid last name is required.
           </div>
         </div>
 
         <div class="col-md-4">
-          <label for="state" class="form-label">Cor</label>
-          <input type="text" class="form-control" id="lastName" placeholder="Branco" value="" name="cor" required>
+          <label for="state" class="form-label">Cidade</label>
+          <input type="text" class="form-control" id="lastName" placeholder="Curitiba" value="" name="cidadeFornecedor" required>
           <div class="invalid-feedback">
             Valid last name is required.
           </div>
@@ -52,107 +96,9 @@
           </div>
         </div>
 
-        <div class="col-md-3">
-          <label for="zip" class="form-label">Ano</label>
-          <input type="text" class="form-control" id="zip" placeholder="2018" name="ano" required>
-          <div class="invalid-feedback">
-            Zip code required.
-          </div>
-        </div>
-        <div class="col-md-12">
-          <label for="country" class="form-label">Imagem 01</label>
-          <input type="file" class="form-control" id="lastName" placeholder="" name="imagem01" value="" required>
-          <div class="invalid-feedback">
-            Valid last name is required.
-          </div>
-        </div>
-        <div class="col-md-12">
-          <label for="country" class="form-label">Imagem 02</label>
-          <input type="file" class="form-control" id="lastName" placeholder="" name="imagem02" value="" required>
-          <div class="invalid-feedback">
-            Valid last name is required.
-          </div>
-        </div>
-        <div class="col-md-12">
-          <label for="cover" class="form-label">Imagem 03</label>
-          <input type="file" class="form-control" id="lastName" placeholder="" value="" name="imagem03" required>
-          <div class="invalid-feedback">
-            Valid last name is required.
-          </div>
-        </div>
-        <div class="col-md-12">
-          <label for="country" class="form-label">Imagem 04</label>
-          <input type="file" class="form-control" id="lastName" placeholder="" value="" name="imagem04"  required>
-          <div class="invalid-feedback">
-            Valid last name is required.
-          </div>
-        </div>
-        <div class="col-md-12">
-          <label for="country" class="form-label">Imagem 05</label>
-          <input type="file" class="form-control" id="lastName" placeholder="" value="" name="imagem05" required>
-          <div class="invalid-feedback">
-            Valid last name is required.
-          </div>
-        </div>
-      </div>
-
-      <hr class="my-4">
-      <h2 class="mb-3 mt-5">Pendencias ?</h2>
-      <div class="row g-3 mt-5">
-        <div class="col-sm-6">
-          <label for="firstName" class="form-label">Divida</label>
-          <input type="text" class="form-control" id="firstName" placeholder="Pendencias do Veiculo" name="divida" value="" required>
-          <div class="invalid-feedback">
-            Valid first name is required.
-          </div>
-        </div>
-
-        <div class="col-sm-6">
-          <label for="lastName" class="form-label">Financiamento</label>
-          <input type="text" class="form-control" id="lastName" placeholder="Pendencias do Veiculo" name="financiamento" value="" required>
-          <div class="invalid-feedback">
-            Valid last name is required.
-          </div>
-        </div>
-
-
-
-        <div class="col-md-5">
-          <label for="country" class="form-label">Quitação</label>
-          <input type="text" class="form-control" id="lastName" placeholder="30 X 1220,00" name="quitacao" value="" required>
-          <div class="invalid-feedback">
-            Valid last name is required.
-          </div>
-        </div>
-
-        <div class="col-md-4">
-          <label for="state" class="form-label">Multa</label>
-          <input type="text" class="form-control" id="lastName" placeholder="Multas vinculadas ao Veiculo" value="" name="multa" required>
-          <div class="invalid-feedback">
-            Valid last name is required.
-          </div>
-          <div class="invalid-feedback">
-            Please provide a valid state.
-          </div>
-        </div>
-
-        <div class="col-md-3">
-          <label for="zip" class="form-label">IPVA</label>
-          <input type="text" class="form-control" id="zip" placeholder="IPVA Veiculo" name="ipva" required>
-          <div class="invalid-feedback">
-            Zip code required.
-          </div>
-        </div>
-        <div class="col-md-3">
-          <label for="country" class="form-label">Licensiamento</label>
-          <input type="text" class="form-control" id="lastName" placeholder="10 X 125,30" value="" name="licensiamento" required>
-          <div class="invalid-feedback">
-            Valid last name is required.
-          </div>
-        </div>
-        <div class="col-md-6">
-          <label for="country" class="form-label">Outros</label>
-          <input type="text" class="form-control" id="lastName" placeholder="" value="" name="outros" required>
+        <div class="col-sm-2">
+          <label for="country" class="form-label">Numero</label>
+          <input type="text" class="form-control" id="lastName" placeholder="1357" value="" name="numero" required>
           <div class="invalid-feedback">
             Valid last name is required.
           </div>
@@ -161,45 +107,74 @@
 
       <hr class="my-4">
 
-      <h2 class="mb-5 ">Dados Venda</h2>
+      <h2 class="mb-5 ">Contatos</h2>
 
       <div class="row gy-3 mt-1">
-        <div class="col-md-8">
-          <label for="cc-name" class="form-label">Nome do vendedor</label>
-          <input type="text" class="form-control" id="cc-name" placeholder="" name="nomeVendedor" required>
-          <small class="text-muted">   Nome completo do vendedor</small>
+        <div class="col-md-4">
+          <label for="cc-name" class="form-label">Contato 01</label>
+          <input type="text" class="form-control" id="cc-name" placeholder="Sandro Luiz Padilha" name="contato1" required>
           <div class="invalid-feedback">
 
           </div>
         </div>
-        <div class="col-md-3">
-          <label for="cc-expiration" class="form-label">Valor da venda</label>
-          <input type="text" class="form-control" id="cc-expiration" placeholder="" name="valorVenda" required>
+        <div class="col-md-4">
+          <label for="cc-expiration" class="form-label">Telefone 01</label>
+          <input type="text" class="form-control" id="cc-expiration" placeholder="041 99725 - 1035" name="telefone1" required>
           <div class="invalid-feedback">
             Expiration date required
           </div>
         </div>
 
-        <div class="col-md-3">
-          <label for="cc-cvv" class="form-label">Data entrada</label>
-          <input type="date" class="form-control" id="cc-cvv" placeholder="" name="dataEntrada" required>
+        <div class="col-md-4">
+          <label for="cc-cvv" class="form-label">Email 01</label>
+          <input type="text" class="form-control" id="cc-cvv" placeholder="sandro@gmail.com" name="email1" required>
           <div class="invalid-feedback">
             Security code required
           </div>
         </div>
-        <div class="col-md-3">
-          <label for="cc-cvv" class="form-label">Data saida</label>
-          <input type="date" class="form-control" format="mm-dd-yyyy" name="dataSaida" required>
+        <div class="col-md-6">
+          <label for="cc-cvv" class="form-label">Cargo Setor 01</label>
+          <input type="text" class="form-control" placeholder="Diretor Financeiro" name="cargoSetor1" required>
           <div class="invalid-feedback">
             Security code required
           </div>
         </div>
-        <hr class="col-12">
-        <button class="w-100 btn btn-primary btn-lg" style="background-color: #00030C;  type="submit">Registrar Veiculo</button>
+        <div class="row gy-3 mt-1">
+          <div class="col-md-4">
+            <label for="cc-name" class="form-label">Contato 02</label>
+            <input type="text" class="form-control" id="cc-name" placeholder="Fernanda Cabral Bragança" name="contato2" required>
+            <div class="invalid-feedback">
+
+            </div>
+          </div>
+          <div class="col-md-4">
+            <label for="cc-expiration" class="form-label">Telefone 02</label>
+            <input type="text" class="form-control" id="cc-expiration" placeholder="047 99851 - 3595" name="telefone2" required>
+            <div class="invalid-feedback">
+              Expiration date required
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <label for="cc-cvv" class="form-label">Email 02</label>
+            <input type="text" class="form-control" id="cc-cvv" placeholder="ferbragança@outlook.com" name="email2" required>
+            <div class="invalid-feedback">
+              Security code required
+            </div>
+          </div>
+          <div class="col-md-6">
+            <label for="cc-cvv" class="form-label">Cargo Setor 02</label>
+            <input type="text" class="form-control" placeholder="Gerente de Compras" name="cargoSetor2" required>
+            <div class="invalid-feedback">
+              Security code required
+            </div>
+          </div>
+          <hr class="col-12">
+          <button class="w-100 btn btn-primary btn-lg" type="submit">Registrar Fornecedor</button>
+        </div>
       </div>
-    </div>
-  </form>
-</div>
+    </form>
+  </div>
 </div>
 </main>
 </section>  

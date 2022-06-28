@@ -22,7 +22,7 @@ class ClientController extends Controller
             $registro = [];
 
             $registro['id'] = $value['id'];
-            $registro['inscricaoEstadual'] = $value['inscricaoEstadual'];
+            $registro['cliente'] = $value['cliente'];
             $registro['uasg'] = $value['uasg'];
             $registro['cnpj'] = $value['cnpj'];
 
@@ -57,8 +57,13 @@ class ClientController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        echo "Hellow World";
+    {       
+         $diceClient = $request->all();
+          
+         $createCliente = Client::create($diceClient);
+
+         return view('Clients.todosClient');
+
     }
 
     /**

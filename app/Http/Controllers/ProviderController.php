@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Portais;
 use Illuminate\Http\Request;
 
-class PortaisController extends Controller
+use App\Models\Providers;
+
+class ProviderController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,26 +15,30 @@ class PortaisController extends Controller
      */
     public function index()
     {
-           $all = Portais::all();
+        {
+        $all = Providers::all();
 
-           foreach ($all as $key => $value) {
+        foreach ($all as $key => $value) {
 
             $registro = [];
 
             $registro['id'] = $value['id'];
-            $registro['login'] = $value['login'];
-            $registro['portal'] = $value['portal'];
+            $registro['fornecedor'] = $value['fornecedor'];
+            $registro['cnpj'] = $value['cnpj'];
 
             $id = $value['id'];
 
-            $registro['button'] = '<button class="button is-info is-light" onclick="visualisarUsuario('.$id.')"
+           $registro['button'] = '<button class="button is-info is-light" onclick="visualisarUsuario('.$id.')"
             id="modal"><i clss="fa-solid fa-cabinet-filing"></i><i class="fa-solid fa-folder-closed"></i></button>
 
             <button class="button is-danger is-light" onclick="deletarUsuario('.$id.')"><i class="fa-solid fa-trash-can"></i></button>';
             $data[] = $registro;
+
+
         }
 
         return ['data'=>$data];   
+    }
 
     }
 
@@ -55,16 +60,20 @@ class PortaisController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $dicesProvider  = $request->all();
+          
+        $createCliente = Fornecedores::create($dicesProvider);
+
+         return view('Clients.todosClient');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Portais  $portais
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Portais $portais)
+    public function show($id)
     {
         //
     }
@@ -72,10 +81,10 @@ class PortaisController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Portais  $portais
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Portais $portais)
+    public function edit($id)
     {
         //
     }
@@ -84,10 +93,10 @@ class PortaisController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Portais  $portais
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Portais $portais)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -95,10 +104,10 @@ class PortaisController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Portais  $portais
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Portais $portais)
+    public function destroy($id)
     {
         //
     }

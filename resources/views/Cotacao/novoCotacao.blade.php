@@ -11,9 +11,9 @@
 
      <form class="needs-validation  px-5 py-1 mt-1" method="POST" action="">
       @csrf
-      <div class="mb-5">
-        <h1 class="mt-5">Fazer Cotação</h1>
-      </div>
+          <div class="alert border alert-warning" role="alert">
+      <h1 class="mx-2 my-2">Fazer Cotação</h1>
+    </div>
       <div class="row g-3 mt-3">
         <div class="col-sm-6">
           <label for="firstName" class="form-label">Marca</label>

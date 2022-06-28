@@ -29,8 +29,8 @@
         </a>
       </li>
       <li class="nav-item">
-       
-            <div class="float-end mr-5"><button type="button" class="button is-danger is-solid">Logout <i class=" mx-1 my-1 fa-solid fa-person-walking-dashed-line-arrow-right"></i></button></div>
+
+        <div class="float-end mr-5"><button type="button" class="button is-danger is-solid">Logout <i class=" mx-1 my-1 fa-solid fa-person-walking-dashed-line-arrow-right"></i></button></div>
       </li>
     </ul>
   </nav>
@@ -110,7 +110,6 @@
                   </p>
                 </a>
               </li>
-
               <!-- /.sidebar-menu -->
             </div>
             <!-- /.sidebar -->

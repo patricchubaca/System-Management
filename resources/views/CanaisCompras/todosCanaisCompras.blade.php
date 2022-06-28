@@ -6,23 +6,23 @@
   <div class="row">
     <div class="mb-5">
       <div class="alert border" role="alert">
-        <h1 class="mx-2 my-2">Portais de Compra</h1>
+        <h1 class="mx-2 my-2">Portais de Compras</h1>
       </div>
-       <div class="float-end mr-5">
-      <a href="{{route('novoPortal')}}" type="button" class="button is-solid is-medium">
-        Portais de Compra
-        <i class="fa-solid fa-person-circle-plus ml-3">
-        </i>
-      </a>
-    </div>
+      <div class="float-end mr-5">
+        <a href="{{route('novoPortal')}}" type="button" class="button is-solid is-medium">
+          Portal de Compra
+          <i class="fa-solid fa-person-circle-plus ml-3">
+          </i>
+        </a>
+      </div>
     </div>       
   </div>
-
 
   <table class="table" id="tableUsuarios">
     <thead>
       <tr>
         <th scope="col">Portais</th>
+         <th scope="col">Login</th>
         <th scope="col">Edit | Delete</th>
       </tr>
     </thead>
@@ -36,10 +36,11 @@
 <script type="text/javascript">
   $(document).ready(function() {
    $('#tableUsuarios').DataTable( {
-    "ajax": "/api/client",
+    "ajax": "/api/portais",
     "columns": [
-    {"data":"inscricaoEstadual" },
-    {"data":"button" }
+    {"data":"portal"},
+    {"data":"login"},
+    {"data":"button"}
     ]
   } );
  } );

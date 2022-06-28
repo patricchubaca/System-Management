@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\ClientController;
+use App\Http\Controllers\ProviderController;
 
 
 
@@ -43,23 +44,17 @@ Route::get('/novoCanaisCompras',function () { return view('CanaisCompras.novoCan
 
 ##################### Client #########################
 Route::post('/client', [ClientController::class, 'store'])->name('storeClient');
+
 Route::post('/client/{id}', [ClientController::class, 'update']);
 Route::get('/client/{id}', [ClientController::class, 'show'] );
 Route::delete('/client/{id}', [ClientController::class, 'destroy']);
 
 ##################### Fornecedores #########################
-//Route::get('/fornecedores', [Fornecedoresontroller::class, 'index']);
-//Route::post('/fornecedores', [Fornecedoresontroller::class, 'create']);
-//Route::post('/fornecedores/{id}', [Fornecedoresontroller::class, 'update']);
-//Route::get('/fornecedores/{id}', [Fornecedoresontroller::class, 'show'] );
-//Route::delete('/fornecedores/{id}', [Fornecedoresontroller::class, 'destroy']);
+
+Route::post('/fornecedores', [ProviderController::class, 'store'])->name('storeProvider');
 
 ##################### Portais #########################
 
-Route::post('/portais', [ClientController::class, 'create']);
-Route::post('/portais/{id}', [ClientController::class, 'update']);
-Route::get('/portais/{id}', [ClientController::class, 'show']);
-Route::delete('/portais/{id}', [ClientController::class, 'destroy']);
 
 ##################### Produtos #########################
 Route::post('/produtos', [ClientController::class, 'create']);

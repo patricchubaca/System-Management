@@ -61,42 +61,6 @@
           Zip code required.
         </div>
       </div>
-      <div class="col-md-12">
-        <label for="country" class="form-label">Imagem 01</label>
-        <input type="file" class="form-control" id="lastName" placeholder="" name="imagem01" value="" required>
-        <div class="invalid-feedback">
-          Valid last name is required.
-        </div>
-      </div>
-      <div class="col-md-12">
-        <label for="country" class="form-label">Imagem 02</label>
-        <input type="file" class="form-control" id="lastName" placeholder="" name="imagem02" value="" required>
-        <div class="invalid-feedback">
-          Valid last name is required.
-        </div>
-      </div>
-      <div class="col-md-12">
-        <label for="cover" class="form-label">Imagem 03</label>
-        <input type="file" class="form-control" id="lastName" placeholder="" value="" name="imagem03" required>
-        <div class="invalid-feedback">
-          Valid last name is required.
-        </div>
-      </div>
-      <div class="col-md-12">
-        <label for="country" class="form-label">Imagem 04</label>
-        <input type="file" class="form-control" id="lastName" placeholder="" value="" name="imagem04"  required>
-        <div class="invalid-feedback">
-          Valid last name is required.
-        </div>
-      </div>
-      <div class="col-md-12">
-        <label for="country" class="form-label">Imagem 05</label>
-        <input type="file" class="form-control" id="lastName" placeholder="" value="" name="imagem05" required>
-        <div class="invalid-feedback">
-          Valid last name is required.
-        </div>
-      </div>
-    </div>
 
     <hr class="my-4">
     <h2 class="mb-3 mt-5">Pendencias ?</h2>
@@ -197,7 +161,7 @@
         </div>
       </div>
       <hr class="col-12">
-      <button class="w-100 btn btn-primary btn-lg" style="background-color: #00030C;  type="submit">Registrar</button>
+      <button class="w-100 btn btn-primary btn-lg" type="submit">Registrar</button>
     </div>
   </div>
 </form>

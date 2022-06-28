@@ -36,10 +36,10 @@
 <script type="text/javascript">
   $(document).ready(function() {
    $('#tableUsuarios').DataTable( {
-    "ajax": "/api/client",
+    "ajax": "/api/produtos",
     "columns": [
-    {"data":"inscricaoEstadual" },
-    {"data":"uasg" },
+    {"data":"produto" },
+    {"data":"marca" },
     {"data":"button" }
     ]
   } );

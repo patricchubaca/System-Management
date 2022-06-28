@@ -21,8 +21,6 @@
 <table class="table" id="tableUsuarios">
   <thead>
     <tr>
-      <th scope="col">inscricao Estadual</th>
-      <th scope="col">UASG</th>
       <th scope="col">CNPJ</th>
       <th scope="col">Edit | Delete</th>
     </tr>
@@ -37,10 +35,8 @@
 <script type="text/javascript">
   $(document).ready(function() {
    $('#tableUsuarios').DataTable( {
-    "ajax": "/api/client",
+    "ajax": "/api/empresas",
     "columns": [
-    {"data":"inscricaoEstadual" },
-    {"data":"uasg" },
     {"data":"cnpj" },
     {"data":"button" }
     ]

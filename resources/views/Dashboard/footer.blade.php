@@ -1,4 +1,5 @@
- 
+<script type="text/javascript" src="/js/cep.js"></script>
+
 
  <footer class="main-footer">
     <strong>Siscota &copy; 2022 <a href="">Siscota</a>.</strong>
@@ -7,3 +8,4 @@
       <b>Version</b> 3.2.0
     </div>
   </footer>
+

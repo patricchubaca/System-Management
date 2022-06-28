@@ -23,6 +23,7 @@
     <tr>
       <th scope="col">UASG</th>
       <th scope="col">CNPJ</th>
+      <th scope="col">Cliente</th>
       <th scope="col">Edit | Delete</th>
     </tr>
   </thead>
@@ -80,6 +81,7 @@
     "columns": [
     {"data":"uasg" },
     {"data":"cnpj" },
+    {"data":"cliente" },
     {"data":"button" }
     ]
   } );

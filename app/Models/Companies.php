@@ -5,12 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Portais extends Model
+class Companies extends Model
 {
   use HasFactory;
 
 
-  protected $table = 'portais';
+  protected $table = 'companies';
 
   protected $primaryKey = 'id';
 
@@ -20,10 +20,15 @@ class Portais extends Model
   protected $fillable =[
 
      'id',
-     'portal',
-     'site',
-     'login',
-     'senha'
+     'razaoSocial',
+     'inscricaoEstadual',
+     'cnpj',
+     'rua',
+     'bairro',
+     'cidade',
+     'cep',
+     'telefone',
+     'email'
   ];
 
 }

@@ -18,14 +18,16 @@ class Client extends Model
     protected $fillable = [
 
         'id',
+        'cliente',
         'uasg',
         'cnpj',
-        'isento',
         'inscricaoEstadual',
+        'isentoIE',
         'observacaoes',
-        'endereco',
+        'rua',
         'bairro',
         'cidade',
+        'numero',
         'cep',
         'contato1',
         'telefone1',
@@ -34,8 +36,7 @@ class Client extends Model
         'contato2',
         'telefone2',
         'email2',
-        'cargoSetor2'    
-
-
+        'cargoSetor2', 
+        'observacoes'   
     ];
 }

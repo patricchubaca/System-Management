@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Portais;
+use App\Models\Products;
 use Illuminate\Http\Request;
 
-class PortaisController extends Controller
+class ProductsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,28 +14,28 @@ class PortaisController extends Controller
      */
     public function index()
     {
-           $all = Portais::all();
+     $all = Products::all();
 
-           foreach ($all as $key => $value) {
+     foreach ($all as $key => $value) {
 
-            $registro = [];
+        $registro = [];
 
-            $registro['id'] = $value['id'];
-            $registro['login'] = $value['login'];
-            $registro['portal'] = $value['portal'];
+        $registro['id'] = $value['id'];
+        $registro['produto'] = $value['produto'];
+        $registro['marca'] = $value['marca'];
 
-            $id = $value['id'];
+        $id = $value['id'];
 
-            $registro['button'] = '<button class="button is-info is-light" onclick="visualisarUsuario('.$id.')"
-            id="modal"><i clss="fa-solid fa-cabinet-filing"></i><i class="fa-solid fa-folder-closed"></i></button>
+        $registro['button'] = '<button class="button is-info is-light" onclick="visualisarUsuario('.$id.')"
+        id="modal"><i clss="fa-solid fa-cabinet-filing"></i><i class="fa-solid fa-folder-closed"></i></button>
 
-            <button class="button is-danger is-light" onclick="deletarUsuario('.$id.')"><i class="fa-solid fa-trash-can"></i></button>';
-            $data[] = $registro;
-        }
-
-        return ['data'=>$data];   
-
+        <button class="button is-danger is-light" onclick="deletarUsuario('.$id.')"><i class="fa-solid fa-trash-can"></i></button>';
+        $data[] = $registro;
     }
+
+    return ['data'=>$data];   
+
+}
 
     /**
      * Show the form for creating a new resource.
@@ -61,10 +61,10 @@ class PortaisController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Portais  $portais
+     * @param  \App\Models\Produtos  $produtos
      * @return \Illuminate\Http\Response
      */
-    public function show(Portais $portais)
+    public function show(Produtos $produtos)
     {
         //
     }
@@ -72,10 +72,10 @@ class PortaisController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Portais  $portais
+     * @param  \App\Models\Produtos  $produtos
      * @return \Illuminate\Http\Response
      */
-    public function edit(Portais $portais)
+    public function edit(Produtos $produtos)
     {
         //
     }
@@ -84,10 +84,10 @@ class PortaisController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Portais  $portais
+     * @param  \App\Models\Produtos  $produtos
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Portais $portais)
+    public function update(Request $request, Produtos $produtos)
     {
         //
     }
@@ -95,10 +95,10 @@ class PortaisController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Portais  $portais
+     * @param  \App\Models\Produtos  $produtos
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Portais $portais)
+    public function destroy(Produtos $produtos)
     {
         //
     }

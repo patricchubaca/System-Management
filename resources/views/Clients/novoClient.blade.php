@@ -14,10 +14,18 @@
     <div class="alert border" role="alert">
       <h1 class="mx-2 my-2">Novo Cliente</h1>
     </div>
+       <div class="row g-3 mt-3">
+        <div class="col-sm-8">
+          <label for="firstName" class="form-label">Cliente</label>
+          <input type="text" class="form-control" id="firstName" placeholder="SOLIDSTEEL" name="cliente" required>
+          <div class="invalid-feedback">
+            Valid first name is required.
+          </div>
+        </div>
       <div class="row g-3 mt-3">
         <div class="col-sm-4">
           <label for="firstName" class="form-label">UASG</label>
-          <input type="text" class="form-control" id="firstName" placeholder="158637" maxlength="6" name="uasg" required>
+          <input type="number" class="form-control" id="firstName" placeholder="158637" name="uasg" required>
           <div class="invalid-feedback">
             Valid first name is required.
           </div>
@@ -25,7 +33,7 @@
 
         <div class="col-sm-4">
           <label for="lastName" class="form-label">CNPJ</label>
-          <input type="text" class="form-control" id="lastName" placeholder="21.474.350/0001-60" value="" name="cnpj" required>
+          <input type="number" class="form-control" id="lastName" placeholder="21474350000160" value="" name="cnpj" required>
           <div class="invalid-feedback">
             Valid last name is required.
           </div>
@@ -49,7 +57,7 @@
 
         <div class="col-md-2">
           <label for="state" class="form-label">Isento ?</label>
-          <input type="text" class="form-control" id="lastName" placeholder="SIM" value="" name="isento" required>
+          <input type="text" class="form-control" id="lastName" placeholder="SIM" value="" name="isentoIE" required>
           <div class="invalid-feedback">
             Valid last name is required.
           </div>
@@ -63,7 +71,7 @@
       <div class="row g-3 mt-4">
         <div class="col-sm-2">
           <label for="firstName" class="form-label">CEP</label>
-          <input type="text" class="form-control" id="firstName" placeholder="83.507-382" name="endereco" value="" required>
+          <input type="text" class="form-control" id="firstName" placeholder="83507-382" name="cep" value="" required>
           <div class="invalid-feedback">
             Valid first name is required.
           </div>
@@ -71,7 +79,7 @@
 
         <div class="col-sm-4">
           <label for="lastName" class="form-label">Rua</label>
-          <input type="text" class="form-control" id="lastName" placeholder="Avenida Sete de Setembro" name="rua" value="" required>
+          <input type="text" class="form-control" placeholder="Avenida Sete de Setembro" name="rua" value="" required>
           <div class="invalid-feedback">
             Valid last name is required.
           </div>
@@ -109,7 +117,6 @@
 
       <h2 class="mb-5 ">Contatos</h2>
 
-
       <div class="row gy-3 mt-1">
         <div class="col-md-4">
           <label for="cc-name" class="form-label">Contato 01</label>
@@ -135,7 +142,7 @@
         </div>
         <div class="col-md-6">
           <label for="cc-cvv" class="form-label">Cargo Setor 01</label>
-          <input type="text" class="form-control" placeholder="Diretor Financeiro" name="cargo1" required>
+          <input type="text" class="form-control" placeholder="Diretor Financeiro" name="cargoSetor1" required>
           <div class="invalid-feedback">
             Security code required
           </div>
@@ -165,7 +172,7 @@
         </div>
         <div class="col-md-6">
           <label for="cc-cvv" class="form-label">Cargo Setor 02</label>
-          <input type="text" class="form-control" placeholder="Gerente de Compras" name="cargo2" required>
+          <input type="text" class="form-control" placeholder="Gerente de Compras" name="cargoSetor2" required>
           <div class="invalid-feedback">
             Security code required
           </div>

@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Produtos;
 use Illuminate\Http\Request;
 
-class ProdutosController extends Controller
+use App\Models\Companies;
+
+class CompaniesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +15,27 @@ class ProdutosController extends Controller
      */
     public function index()
     {
-        //
+         $all = Companies::all();
+
+           foreach ($all as $key => $value) {
+
+            $registro = [];
+
+            $registro['id'] = $value['id'];
+            $registro['cnpj'] = $value['cnpj'];
+        
+
+            $id = $value['id'];
+
+            $registro['button'] = '<button class="button is-info is-light" onclick="visualisarUsuario('.$id.')"
+            id="modal"><i clss="fa-solid fa-cabinet-filing"></i><i class="fa-solid fa-folder-closed"></i></button>
+
+            <button class="button is-danger is-light" onclick="deletarUsuario('.$id.')"><i class="fa-solid fa-trash-can"></i></button>';
+            $data[] = $registro;
+        }
+
+        return ['data'=>$data];   
+
     }
 
     /**
@@ -41,10 +62,10 @@ class ProdutosController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Produtos  $produtos
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Produtos $produtos)
+    public function show($id)
     {
         //
     }
@@ -52,10 +73,10 @@ class ProdutosController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Produtos  $produtos
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Produtos $produtos)
+    public function edit($id)
     {
         //
     }
@@ -64,10 +85,10 @@ class ProdutosController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Produtos  $produtos
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Produtos $produtos)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -75,10 +96,10 @@ class ProdutosController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Produtos  $produtos
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Produtos $produtos)
+    public function destroy($id)
     {
         //
     }
