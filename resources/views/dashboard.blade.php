@@ -18,7 +18,6 @@
             </div><!-- /.col -->
             <div class="col-sm-6">
               <ol class="breadcrumb float-sm-right">
-              
               </ol>
             </div><!-- /.col -->
           </div><!-- /.row -->
@@ -46,7 +45,9 @@
   </div>
   <!-- ./wrapper -->
 
-  <script type="text/javascript" src="/js/cepClientes"></script>
+  <script type="text/javascript" src="/js/app.js"></script>
+
+ <script type="text/javascript" src="/js/cep.js"></script>
 
   <script type="text/javascript" src="https://cdn.datatables.net/v/dt/jq-3.6.0/dt-1.11.5/datatables.min.js"></script>
 
@@ -56,7 +57,6 @@
 
   <script src="https://adminlte.io/themes/v3/dist/js/adminlte.js?v=3.2.0"></script>
 
-  <script src="https://adminlte.io/themes/v3/plugins/chart.js/Chart.min.js"></script>
 
   <script src="https://adminlte.io/themes/v3/dist/js/pages/dashboard3.js"></script>
 

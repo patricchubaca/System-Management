@@ -17,15 +17,6 @@
     </div>
   </div>
   <div>
-    @can('is_admin')
-
-    <div> SOU O JOBS </div>
-
-    @else
-
-    <div>Não SOU O JOBS :c</div>
-
-    @endif
 
   </div>    
 </div>

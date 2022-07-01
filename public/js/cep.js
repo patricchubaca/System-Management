@@ -4,8 +4,6 @@ const $campoBairro = document.querySelector('[name="bairro"]');
 const $campoRua = document.querySelector('[name="rua"]');
 const $campoCidade = document.querySelector('[name="cidade"]');
 
-console.log($campoCep);
-
 $campoCep.addEventListener("blur", infosDoEvento => {
 
   const cep = infosDoEvento.target.value;
@@ -23,7 +21,5 @@ $campoCep.addEventListener("blur", infosDoEvento => {
     $campoRua.value = dadosDoCep.logradouro;
   });
 });
-
-
 
 

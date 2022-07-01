@@ -31,7 +31,7 @@ class ClientController extends Controller
            $registro['button'] = '<button class="button is-info is-light" onclick="visualisarUsuario('.$id.')"
             id="modal"><i clss="fa-solid fa-cabinet-filing"></i><i class="fa-solid fa-folder-closed"></i></button>
 
-            <button class="button is-danger is-light" onclick="deletarUsuario('.$id.')"><i class="fa-solid fa-trash-can"></i></button>';
+            <button class="button is-danger is-light" onclick="deletarCliente('.$id.')"><i class="fa-solid fa-trash-can"></i></button>';
             $data[] = $registro;
 
 
