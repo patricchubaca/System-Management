@@ -24,9 +24,7 @@ class PortaisController extends Controller
             $registro['login'] = $value['login'];
             $registro['portal'] = $value['portal'];
 
-            $id = $value['id'];
-
-            $registro['button'] = '<button class="button is-info is-light" onclick="visualisarUsuario('.$id.')"
+            $registro['button'] = '<button class="button is-info is-light" onclick="createPortais('.$value['id'].')"
             id="modal"><i clss="fa-solid fa-cabinet-filing"></i><i class="fa-solid fa-folder-closed"></i></button>
 
             <button class="button is-danger is-light" onclick="deletarUsuario('.$id.')"><i class="fa-solid fa-trash-can"></i></button>';

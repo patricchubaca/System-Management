@@ -8,7 +8,6 @@
     <main>
     </div>
     <div class="col-md-7 col-lg-12 mt-1 border">
-      
      <form class="needs-validation  px-5 py-1 mt-1" method="POST" action="{{ route('storeClient')}}">
       @csrf
     <div class="alert border" role="alert">

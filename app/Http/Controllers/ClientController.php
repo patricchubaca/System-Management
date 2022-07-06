@@ -26,9 +26,7 @@ class ClientController extends Controller
             $registro['uasg'] = $value['uasg'];
             $registro['cnpj'] = $value['cnpj'];
 
-            $id = $value['id'];
-
-           $registro['button'] = '<button class="button is-info is-light" onclick="visualisarUsuario('.$id.')"
+           $registro['button'] = '<button class="button is-info is-light" onclick="createClient('.$value['id'].')">
             id="modal"><i clss="fa-solid fa-cabinet-filing"></i><i class="fa-solid fa-folder-closed"></i></button>
 
             <button class="button is-danger is-light" onclick="deletarCliente('.$id.')"><i class="fa-solid fa-trash-can"></i></button>';
