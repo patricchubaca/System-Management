@@ -9,7 +9,7 @@
       <h1 class="mx-2 my-2">Produtos</h1>
     </div>
     <div class="float-end mr-5">
-      <a href="{{route('createProdutos')}}" type="button" class="button is-solid is-medium">
+      <a href="{{route('produto')}}" type="button" class="button is-solid is-medium">
         Produto
         <i class="fa-solid fa-person-circle-plus ml-3">
         </i>

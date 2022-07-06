@@ -4,38 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Models\Client;
-
-class ClientController extends Controller
+class FornecedoresController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-     public function index()
+    public function index()
     {
-        $all = Client::all();
-
-        foreach ($all as $key => $value) {
-
-            $registro = [];
-
-            $registro['id'] = $value['id'];
-            $registro['cliente'] = $value['cliente'];
-            $registro['uasg'] = $value['uasg'];
-            $registro['cnpj'] = $value['cnpj'];
-
-           $registro['button'] = '<button class="button is-info is-light" onclick="createClient('.$value['id'].')">
-            id="modal"><i clss="fa-solid fa-cabinet-filing"></i><i class="fa-solid fa-folder-closed"></i></button>
-
-            <button class="button is-danger is-light" onclick="deletarCliente('.$id.')"><i class="fa-solid fa-trash-can"></i></button>';
-            $data[] = $registro;
-
-
-        }
-
-        return ['data'=>$data];   
+        //
     }
 
     /**
@@ -45,7 +23,7 @@ class ClientController extends Controller
      */
     public function create()
     {
-        
+        //
     }
 
     /**
@@ -55,13 +33,8 @@ class ClientController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {       
-         $diceClient = $request->all();
-          
-         $createCliente = Client::create($diceClient);
-
-         return view('Clients.todosClient');
-
+    {
+        //
     }
 
     /**

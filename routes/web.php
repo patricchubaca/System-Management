@@ -2,10 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\ClientController;
-use App\Http\Controllers\ProviderController;
-
-
+use App\Http\Controllers\ClienteController;
+use App\Http\Controllers\FornecedoresController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,71 +16,56 @@ use App\Http\Controllers\ProviderController;
 |
 */
 
-Route::get('/', function () { return view('auth.login');});
+#################################################### clientes #####################################################################
+Route::get('/cliente',function () { return view('Clientes.novoCliente');})->name('createCliente');
+Route::post('/cliente', [ClienteController::class, 'store'])->name('storeCliente');
+Route::post('/cliente/{id}', [ClienteController::class, 'update'])->name('updateCliente');
+Route::get('/cliente/{id}', [ClienteController::class, 'show'] )->name('showCliente');
+Route::delete('/cliente/{id}', [ClienteController::class, 'destroy'])->name('destroyCliente');
 
-##################### Chamadas de Views Dashboard #########################
+############################################ Fornecedores #######################################################################
+Route::get('/fornecedor',function () { return view('Fornecedores.todosFornecedores');})->name('fornecedor');
+Route::post('/fornecedore', [FornecedoresController::class, 'store'])->name('storeProvider')->name('storeFornecedor');
+Route::post('/fornecedore/{id}', [FornecedoresController::class, 'update'])->name('updateFornecedor');
+Route::get('/fornecedore/{id}', [FornecedoresController::class, 'show'] )->name('showFornecedor');
+Route::delete('/fornecedore/{id}', [FornecedoresController::class, 'destroy'])->name('destroyFornecedor');
 
-Route::get('/dashboard', function () { return view('Fornecedores.todosFornecedores');})->middleware(['auth'])->name('dashboard');
-Route::get('/produtos',function () { return view('Produtos.todosProdutos');})->name('produto');
-Route::get('/fornecedores',function () { return view('Fornecedores.todosFornecedores');})->name('fornecedores');
-Route::get('/marcas', function () { return view ('Marcas.todosMarcas');})->name('marcas');
-Route::get('/client',function () { return view('Clients.todosClient');})->name('client');
-Route::get('/portais',function () { return view('Portais.novoPortal');})->name('portais');
-Route::get('/empresasCadastradas',function () { return view('EmpresasCadastradas.todosEmpresasCadastradas');})->name('empresasCadastradas');
-Route::get('/canaisCompras',function () { return view('CanaisCompras.todosCanaisCompras');})->name('canaisCompras');
-Route::get('/cotacao',function () { return view('Cotacao.novoCotacao');})->name('cotacao');
+#################################################### Marcas ######################################################################
+Route::post('/marca', [MarcaController::class, 'store']);
+Route::get('/marca', [MarcaController::class, 'create']);
+Route::post('/marca/{id}', [MarcaController::class, 'update']);
+Route::get('/marca/{id}', [MarcaController::class, 'show']);
+Route::delete('/marca/{id}', [MarcaController::class, 'destroy']);
 
-################## Chamadas de Views para novos Registros #################
+################################################ Produtos #########################################################################
+Route::get('/produtos', [Produtos::class, 'create']);
+Route::post('/produtos', [Produtos::class, 'store']);
+Route::post('/produtos/{id}', [Produtos::class, 'update']);
+Route::get('/produtos/{id}', [Produtos::class, 'show']);
+Route::delete('/produtos/{id}', [Produtos::class, 'destroy']);
 
-Route::get('/novoProduto',function () { return view('Produtos.novoProduto');})->name('createProdutos');
-Route::get('/novoFornecedor',function () { return view('Fornecedores.novoFornecedor');})->name('createFornecedores');
-Route::get('/novoMarca', function () { return view ('Marcas.novoMarca');})->name('createMarcas');
-Route::get('/novoClient',function () { return view('Clients.novoClient');})->name('createClient');
-Route::get('/novoPortal',function () { return view('Portais.novoPortal');})->name('novoPortal');
-Route::get('/novoEmpresasCadastradas',function () { return view('EmpresasCadastradas.novoEmpresasCadastradas');})->name('createEmpresasCadastradas');
-Route::get('/novoCanaisCompras',function () { return view('CanaisCompras.novoCanaisCompras');})->name('CanaisCompras');
+############################################## Cotação #############################################################################
+Route::get('/cotacao', [CotacaoController::class, 'create']);
+Route::post('/cotacao', [CotacaoController::class, 'store']);
+Route::post('/cotacao/{id}', [CotacaoController::class, 'update']);
+Route::get('/cotacao/{id}', [CotacaoController::class, 'show']);
+Route::delete('/cotacao/{id}', [CotacaoController::class, 'destroy']);
 
-##################### Client #########################
-Route::post('/client', [ClientController::class, 'store'])->name('storeClient');
+###################################################### Empresas Cadastradas ########################################################
+Route::get('/empresa', [EmpresasController::class, 'create']);
+Route::post('/empresa', [EmpresasController::class, 'store']);
+Route::post('/empresa/{id}', [EmpresasController::class, 'update']);
+Route::get('/empresa/{id}', [EmpresasController::class, 'show']);
+Route::delete('/empresa/{id}', [EmpresasController::class, 'destroy']);
 
-Route::post('/client/{id}', [ClientController::class, 'update']);
-Route::get('/client/{id}', [ClientController::class, 'show'] );
-Route::delete('/client/{id}', [ClientController::class, 'destroy']);
-
-##################### Fornecedores #########################
-
-Route::post('/fornecedores', [ProviderController::class, 'store'])->name('storeProvider');
-
-##################### Portais #########################
-
-
-##################### Produtos #########################
-Route::post('/produtos', [ClientController::class, 'create']);
-Route::post('/produtos/{id}', [ClientController::class, 'update']);
-Route::get('/produtos/{id}', [ClientController::class, 'show']);
-Route::delete('/produtos/{id}', [ClientController::class, 'destroy']);
-
-##################### Cotação #########################
-Route::post('/produtos', [ClientController::class, 'create']);
-Route::post('/produtos/{id}', [ClientController::class, 'update']);
-Route::get('/produtos/{id}', [ClientController::class, 'show']);
-Route::delete('/produtos/{id}', [ClientController::class, 'destroy']);
-
-##################### Empresas Cadastradas #########################
-
-Route::post('/produtos', [ClientController::class, 'create']);
-Route::post('/produtos/{id}', [ClientController::class, 'update']);
-Route::get('/produtos/{id}', [ClientController::class, 'show']);
-Route::delete('/produtos/{id}', [ClientController::class, 'destroy']);
-
-##################### Canais de Compra #########################
-Route::post('/produtos', [ClientController::class, 'create']);
-Route::post('/produtos/{id}', [ClientController::class, 'update']);
-Route::get('/produtos/{id}', [ClientController::class, 'show']);
-Route::delete('/produtos/{id}', [ClientController::class, 'destroy']);
+############################################### Canais de Compra ###################################################################
+Route::get('/canais', [CanaisController::class, 'create']);
+Route::post('/canais', [CanaisController::class, 'store']);
+Route::post('/canais/{id}', [CanaisController::class, 'update']);
+Route::get('/canais/{id}', [CanaisController::class, 'show']);
+Route::delete('/canais/{id}', [CanaisController::class, 'destroy']);
 
 
-##################### Marcas #########################
 
 
 
