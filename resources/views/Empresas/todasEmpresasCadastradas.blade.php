@@ -9,9 +9,9 @@
       <h1 class="mx-2 my-2">Empresas Cadastradas</h1>
     </div>
     <div class="float-end mr-5">
-      <a href="{{route('empresa')}}" type="button" class="button is-solid is-medium">
+      <a href="{{route('createEmpresa')}}" type="button" class="button is-solid is-medium">
         Empresas
-        <i class="fa-solid fa-person-circle-plus ml-3">
+        <i class="ml-2 fa-solid fa-house"></i>
         </i>
       </a>
     </div>

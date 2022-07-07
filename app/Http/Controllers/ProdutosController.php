@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Products;
+use App\Models\Produtos;
 use Illuminate\Http\Request;
 
-class ProductsController extends Controller
+class ProdutosController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class ProductsController extends Controller
      */
     public function index()
     {
-     $all = Products::all();
+     $all = Produtos::all();
 
      foreach ($all as $key => $value) {
 
@@ -46,7 +46,7 @@ class ProductsController extends Controller
      */
     public function create()
     {
-        //
+        return view('Produtos.novoProduto');
     }
 
     /**

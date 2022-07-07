@@ -8,7 +8,7 @@
     <main>
     </div>
     <div class="col-md-7 col-lg-12 mt-1 border">
-     <form class="needs-validation  px-5 py-1 mt-1" method="POST" action="{{ route('/cliente')}}">
+     <form class="needs-validation  px-5 py-1 mt-1" method="POST" action="{{ route('storeCliente')}}">
       @csrf
     <div class="alert border" role="alert">
       <h1 class="mx-2 my-2">Novo Cliente</h1>

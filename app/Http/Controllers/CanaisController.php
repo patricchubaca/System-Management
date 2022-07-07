@@ -2,11 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Marcas;
 use Illuminate\Http\Request;
 
-
-class MarcasController extends Controller
+class CanaisController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,28 +12,8 @@ class MarcasController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    { {
-            $all = Marcas::all();
-
-            foreach ($all as $key => $value) {
-
-                $registro = [];
-
-                $registro['id'] = $value['id'];
-                $registro['fornecedor'] = $value['fornecedor'];
-                $registro['cnpj'] = $value['cnpj'];
-
-                $id = $value['id'];
-
-                $registro['button'] = '<button class="button is-info is-light" onclick="createProvider(' . $id . ')"
-            id="modal"><i clss="fa-solid fa-cabinet-filing"></i><i class="fa-solid fa-folder-closed"></i></button>
-
-            <button class="button is-danger is-light" onclick="deletarUsuario(' . $id . ')"><i class="fa-solid fa-trash-can"></i></button>';
-                $data[] = $registro;
-            }
-
-            return ['data' => $data];
-        }
+    {
+        //
     }
 
     /**
@@ -45,7 +23,7 @@ class MarcasController extends Controller
      */
     public function create()
     {
-        return view('Marcas.todosMarcas');
+        return view('Canais.todosCanaisCompras');
     }
 
     /**
@@ -56,11 +34,7 @@ class MarcasController extends Controller
      */
     public function store(Request $request)
     {
-        $dicesProvider  = $request->all();
-
-        $createCliente = Fornecedores::create($dicesProvider);
-
-        return view('Clients.todosClient');
+        //
     }
 
     /**

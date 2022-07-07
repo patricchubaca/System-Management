@@ -6,12 +6,12 @@
   <div class="row">
    <div class="mb-5">
     <div class="alert border" role="alert">
-     <h1 class="mx-2 my-2">Clientes</h1>
+     <h1 class="mx-2 my-2">Cotação</h1>
    </div>
     <div class="float-end mr-5">
-      <a href="{{route('/cliente')}}" type="button" class="button is-solid is-medium">
-        Cliente
-        <i class="fa-solid fa-person-circle-plus ml-3">
+      <a href="{{route('createCotacao')}}" type="button" class="button is-solid is-medium">
+        Cotação
+        <i class=" ml-1 fa-solid fa-hand-holding-dollar"></i>
         </i>
       </a>
     </div>

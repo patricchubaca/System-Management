@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Models\Client;
+use App\Models\Clientes;
 
-class ClientController extends Controller
+class ClientesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +15,7 @@ class ClientController extends Controller
      */
      public function index()
     {
-        $all = Client::all();
+        $all = Clientes::all();
 
         foreach ($all as $key => $value) {
 
@@ -45,7 +45,7 @@ class ClientController extends Controller
      */
     public function create()
     {
-        
+        return view('Clientes.novoCliente');
     }
 
     /**
@@ -58,7 +58,7 @@ class ClientController extends Controller
     {       
          $diceClient = $request->all();
           
-         $createCliente = Client::create($diceClient);
+         $createCliente = Clientes::create($diceClient);
 
          return view('Clients.todosClient');
 

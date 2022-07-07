@@ -9,10 +9,9 @@
       <h1 class="mx-2 my-2">Marcas</h1>
     </div>
     <div class="float-end mr-5">
-      <a href="{{route ('marca') }}" type="button" class="button is-solid is-medium">
+      <a href="{{route ('createMarca') }}" type="button" class="button is-solid is-medium">
         Marca
-        <i class="fa-solid fa-person-circle-plus ml-3">
-        </i>
+        <i class="ml-2 fa-solid fa-comment-dollar"></i>
       </a>
     </div>
   </div>      

@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Portais;
 use Illuminate\Http\Request;
 
-class PortalsPurcheaseController extends Controller
+class PortaisController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -42,7 +42,7 @@ class PortalsPurcheaseController extends Controller
      */
     public function create()
     {
-        //
+        return view('Portais.novoPortal');
     }
 
     /**

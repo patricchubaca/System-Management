@@ -52,7 +52,7 @@
     <nav class="mt-2">
       <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
         <li class="nav-item">
-          <a href="{{route('cotacao')}}" class="nav-link">
+          <a href="{{route('dashboardCotacao')}}" class="nav-link">
             <i class="fa-solid fa-hand-holding-dollar"></i>
             <p>
               Cotação
@@ -61,7 +61,7 @@
         </li>
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <li class="nav-item">
-            <a href="{{route('client')}}" class="nav-link">
+            <a href="{{route('dashboardClientes')}}" class="nav-link">
               <i class="fa-solid fa-user-group"></i>
               <p>
                 Clientes
@@ -70,7 +70,7 @@
           </li>
           <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
             <li class="nav-item">
-              <a href="{{route('produto')}}" class="nav-link">
+              <a href="{{route('dashboardProdutos')}}" class="nav-link">
                 <i class="fa-solid fa-earth-asia"></i>
                 <p>
                   Produtos
@@ -79,7 +79,7 @@
             </li>
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
               <li class="nav-item">
-                <a href="{{route('fornecedores')}}" class="nav-link">
+                <a href="{{route('dashboardFornecedores')}}" class="nav-link">
                  <i class="fa-solid fa-truck-fast"></i>
                  <p>
                   Fornecedores
@@ -88,7 +88,7 @@
             </li>
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
               <li class="nav-item">
-                <a href="{{route('marcas')}}" class="nav-link">
+                <a href="{{route('dashboardMarcas')}}" class="nav-link">
                  <i class="fa-solid fa-comment-dollar"></i>
                  <p>
                   Marcas
@@ -97,7 +97,7 @@
             </li>
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
               <li class="nav-item">
-                <a href="{{route('canaisCompras')}}" class="nav-link">
+                <a href="{{route('dashboardCanais')}}" class="nav-link">
                  <i class="fa-solid fa-coins"></i>
                  <p>
                   Portais de Compras
@@ -106,7 +106,7 @@
             </li>
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
               <li class="nav-item">
-                <a href="{{route('empresasCadastradas')}}" class="nav-link">
+                <a href="{{route('dashboardEmpresas')}}" class="nav-link">
                  <i class="fa-solid fa-house"></i>
                  <p>
                   Empresas Cadastradas

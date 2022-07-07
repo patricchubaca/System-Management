@@ -9,9 +9,9 @@
         <h1 class="mx-2 my-2">Portais de Compras</h1>
       </div>
       <div class="float-end mr-5">
-        <a href="{{route('novoPortal')}}" type="button" class="button is-solid is-medium">
+        <a href="{{route('createCanais')}}" type="button" class="button is-solid is-medium">
           Portal de Compra
-          <i class="fa-solid fa-person-circle-plus ml-3">
+          <i class="ml-2 fa-solid fa-coins"></i>
           </i>
         </a>
       </div>
