@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Fornecedores;
 use Illuminate\Http\Request;
 
 class FornecedoresController extends Controller
@@ -13,7 +14,17 @@ class FornecedoresController extends Controller
      */
     public function index()
     {
-        return view('Fornecedores.novoFornecedoresCadastrados');
+       $todosFornecedores = Fornecedores::all();
+       foreach($todosFornecedores as $key => $value ){
+        $registros = [];
+        $registros['id'] = $value['id'];
+        $registros['cnpj'] = $value['cnpj'];
+        $registros['fornecedor'] = $value['fornecedor'];
+        $registros['button'] = '';
+        $data[] = $registros;
+       }
+
+       return ['data' => $data ];
     }
 
     /**
@@ -23,7 +34,7 @@ class FornecedoresController extends Controller
      */
     public function create()
     {
-        return view('Fornecedores.todosFornecedores');
+        return view('Fornecedores.novoFornecedor');
     }
 
     /**
@@ -34,7 +45,12 @@ class FornecedoresController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $storeRequestFornecedores = $request->all();
+
+        $storeFornecedores = Fornecedores::create($storeRequestFornecedores);
+
+        return view('Fornecedores.todosFornecedores');
+
     }
 
     /**

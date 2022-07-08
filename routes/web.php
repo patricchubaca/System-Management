@@ -44,8 +44,8 @@ Route::delete('/fornecedor/{id}', [FornecedoresController::class, 'destroy'])->n
 
 #################################################### Marcas ######################################################################
 Route::get('/marcas', function () { return view('Marcas.todosMarcas');})->name('dashboardMarcas');
-Route::post('/marca', [MarcasController::class, 'store'])->name('createMarca');
-Route::get('/marca', [MarcasController::class, 'create'])->name('storeMarca');
+Route::get('/marca', [MarcasController::class, 'create'])->name('createMarca');
+Route::post('/marca', [MarcasController::class, 'store'])->name('storeMarca');
 Route::post('/marca/{id}', [MarcasController::class, 'update'])->name('updateMarca');
 Route::get('/marca/{id}', [MarcasController::class, 'show'])->name('showMarca');
 Route::delete('/marca/{id}', [MarcasController::class, 'destroy'])->name('destroyMarca');

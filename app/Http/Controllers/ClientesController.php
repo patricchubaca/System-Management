@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Models\Clientes;
 
+
 class ClientesController extends Controller
 {
     /**
@@ -13,29 +14,27 @@ class ClientesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-     public function index()
+    public function index()
     {
         $all = Clientes::all();
-
         foreach ($all as $key => $value) {
-
             $registro = [];
-
             $registro['id'] = $value['id'];
             $registro['cliente'] = $value['cliente'];
             $registro['uasg'] = $value['uasg'];
             $registro['cnpj'] = $value['cnpj'];
-
-           $registro['button'] = '<button class="button is-info is-light" onclick="createClient('.$value['id'].')">
-             <i class="fa-solid fa-folder-closed"></i> </button>
-
-            <button class="button is-danger is-light" onclick="deletarCliente('.$value['id'].')"><i class="fa-solid fa-trash-can"></i></button>';
+            $registro['button'] = '
+                <button class="button is-info is-light" onclick="criateCliente(' . $value['id'] . ')">
+                    <i class="fa-solid fa-folder-closed"> </i>
+                </button>
+                <button class="button is-danger is-light" onclick="deletarCliente(' . $value['id'] . ')">
+                    <i class="fa-solid fa-trash-can"> </i>
+                </button>
+            ';
             $data[] = $registro;
-
-
         }
 
-        return ['data'=>$data];   
+        return ['data' => $data];
     }
 
     /**
@@ -55,13 +54,12 @@ class ClientesController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {       
-         $diceClient = $request->all();
-          
-         $createCliente = Clientes::create($diceClient);
+    {
+        $diceClient = $request->all();
 
-         return view('Clients.todosClient');
+        $createCliente = Clientes::create($diceClient);
 
+        return view('Clientes.todosCliente');
     }
 
     /**
@@ -72,7 +70,9 @@ class ClientesController extends Controller
      */
     public function show($id)
     {
-        //
+        $modelCliente = new Clientes();
+        $findCar = $modelCliente->find($id);
+        return view('Clientes.editeCliente', compact('findCar'));
     }
 
     /**

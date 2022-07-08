@@ -11,6 +11,10 @@ class Produtos extends Model
 
      protected $table = 'produtos';
 
+     protected $primaryKey = 'id';
+
+     public $timestamps = false;
+
     protected $fillable =[
 
          'id',

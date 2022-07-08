@@ -9,7 +9,7 @@
       <h1 class="mx-2 my-2">Fornecedores</h1>
     </div>
     <div class="float-end mr-5">
-      <a href="" type="button" class="button is-solid is-medium">
+      <a href="{{route ('createFornecedor')}}" type="button" class="button is-solid is-medium">
         Fornecedor
         <i class="ml-2 fa-solid fa-truck-fast"></i>
         </i>
@@ -38,7 +38,7 @@
 <script type="text/javascript">
   $(document).ready(function() {
    $('#tableUsuarios').DataTable( {
-    "ajax": "/api/providers",
+    "ajax": "/api/fornecedores",
     "columns": [
     {"data":"fornecedor" },
     {"data":"cnpj" },

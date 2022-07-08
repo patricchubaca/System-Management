@@ -77,7 +77,7 @@
 <script type="text/javascript">
   $(document).ready(function() {
    $('#tableUsuarios').DataTable( {
-    "ajax": "/api/client",
+    "ajax": "/api/clientes",
     "columns": [
     {"data":"uasg" },
     {"data":"cnpj" },

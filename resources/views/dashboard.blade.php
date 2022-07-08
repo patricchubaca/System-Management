@@ -48,6 +48,10 @@
   <script type="text/javascript" src="/js/app.js"></script>
 
  <script type="text/javascript" src="/js/cep.js"></script>
+ 
+ <script type="text/javascript" src="/js/create.js"></script>
+
+ <script type="text/javascript" src="/js/drop.js"></script>
 
   <script type="text/javascript" src="https://cdn.datatables.net/v/dt/jq-3.6.0/dt-1.11.5/datatables.min.js"></script>
 
@@ -56,10 +60,6 @@
   <script src="https://adminlte.io/themes/v3/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 
   <script src="https://adminlte.io/themes/v3/dist/js/adminlte.js?v=3.2.0"></script>
-
-
-  <script src="https://adminlte.io/themes/v3/dist/js/pages/dashboard3.js"></script>
-
 
  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 

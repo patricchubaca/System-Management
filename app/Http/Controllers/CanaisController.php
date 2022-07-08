@@ -23,7 +23,7 @@ class CanaisController extends Controller
      */
     public function create()
     {
-        return view('Canais.todosCanaisCompras');
+        return view('Canais.novoCanaisCompras');
     }
 
     /**

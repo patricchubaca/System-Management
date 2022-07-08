@@ -18,23 +18,7 @@ class Marcas extends Model
     protected $fillable = [
 
         'id',
-        'fornecedor',
-        'cnpj',
-        'isento',
-        'inscricaoEstadual', 
-        'observacoes',
-        'bairro', 
-        'cidade',
-        'numero',
-        'cep',
-        'rua', 
-        'contato1',
-        'telefone1',
-        'email1',
-        'cargoSetor1',
-        'contato2',
-        'telefone2',
-        'email2',
-        'cargoSetor2'
+        'marca',
+        'produto'
     ];
 }

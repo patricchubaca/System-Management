@@ -15,27 +15,21 @@ class EmpresasController extends Controller
      */
     public function index()
     {
-         $all = Empresas::all();
-
-           foreach ($all as $key => $value) {
-
+        $all = Empresas::all();
+        foreach ($all as $key => $value) {
             $registro = [];
-
             $registro['id'] = $value['id'];
             $registro['cnpj'] = $value['cnpj'];
-        
+            $registro['button'] = '
+            <button class="button is-info is-light"onclick=" createCompanies(' . $value['id'] . ')">
+            <i clss="fa-solid fa-cabinet-filing"> </i>
+            <i class="fa-solid fa-folder-closed"></i></button>
 
-            $id = $value['id'];
-
-            $registro['button'] = '<button class="button is-info is-light"onclick=" createCompanies('.$value['id'].')"
-            id="modal"><i clss="fa-solid fa-cabinet-filing"></i><i class="fa-solid fa-folder-closed"></i></button>
-
-            <button class="button is-danger is-light" onclick="deletarUsuario('.$value['id'].')"><i class="fa-solid fa-trash-can"></i></button>';
+            <button class="button is-danger is-light" onclick="deletarUsuario(' . $value['id'] . ')"><i class="fa-solid fa-trash-can"></i></button>';
             $data[] = $registro;
         }
 
-        return ['data'=>$data];   
-
+        return ['data' => $data];
     }
 
     /**
@@ -45,7 +39,7 @@ class EmpresasController extends Controller
      */
     public function create()
     {
-        return view('Empresas.todasEmpresasCadastradas');
+        return view('Empresas.novoEmpresasCadastradas');
     }
 
     /**

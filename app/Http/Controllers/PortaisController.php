@@ -15,19 +15,15 @@ class PortaisController extends Controller
     public function index()
     {
            $all = Portais::all();
-
            foreach ($all as $key => $value) {
-
             $registro = [];
-
             $registro['id'] = $value['id'];
             $registro['login'] = $value['login'];
             $registro['portal'] = $value['portal'];
-
             $registro['button'] = '<button class="button is-info is-light" onclick="createPortais('.$value['id'].')"
             id="modal"><i clss="fa-solid fa-cabinet-filing"></i><i class="fa-solid fa-folder-closed"></i></button>
 
-            <button class="button is-danger is-light" onclick="deletarUsuario('.$id.')"><i class="fa-solid fa-trash-can"></i></button>';
+            <button class="button is-danger is-light" onclick="deletarUsuario('.$value['id'].')"><i class="fa-solid fa-trash-can"></i></button>';
             $data[] = $registro;
         }
 

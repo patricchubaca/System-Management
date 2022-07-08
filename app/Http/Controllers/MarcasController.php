@@ -16,21 +16,16 @@ class MarcasController extends Controller
     public function index()
     { {
             $all = Marcas::all();
-
             foreach ($all as $key => $value) {
-
                 $registro = [];
-
                 $registro['id'] = $value['id'];
-                $registro['fornecedor'] = $value['fornecedor'];
-                $registro['cnpj'] = $value['cnpj'];
+                $registro['marca'] = $value['marca'];
+                $registro['produto'] = $value['produto'];
 
-                $id = $value['id'];
-
-                $registro['button'] = '<button class="button is-info is-light" onclick="createProvider(' . $id . ')"
+                $registro['button'] = '<button class="button is-info is-light" onclick="createProvider(' . $value['id'] . ')"
             id="modal"><i clss="fa-solid fa-cabinet-filing"></i><i class="fa-solid fa-folder-closed"></i></button>
 
-            <button class="button is-danger is-light" onclick="deletarUsuario(' . $id . ')"><i class="fa-solid fa-trash-can"></i></button>';
+            <button class="button is-danger is-light" onclick="deletarUsuario(' .  $value['id'] . ')"><i class="fa-solid fa-trash-can"></i></button>';
                 $data[] = $registro;
             }
 
@@ -45,7 +40,7 @@ class MarcasController extends Controller
      */
     public function create()
     {
-        return view('Marcas.todosMarcas');
+        return view('Marcas.novoMarcas');
     }
 
     /**
@@ -56,11 +51,10 @@ class MarcasController extends Controller
      */
     public function store(Request $request)
     {
-        $dicesProvider  = $request->all();
+        $requestProdutos = $request->all();  
+        $storeProdutos = Marcas::create($requestProdutos);
 
-        $createCliente = Fornecedores::create($dicesProvider);
-
-        return view('Clients.todosClient');
+        return view('Marcas.todosMarcas');
     }
 
     /**

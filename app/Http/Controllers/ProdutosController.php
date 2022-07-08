@@ -15,22 +15,20 @@ class ProdutosController extends Controller
     public function index()
     {
      $all = Produtos::all();
-
      foreach ($all as $key => $value) {
-
         $registro = [];
-
         $registro['id'] = $value['id'];
         $registro['produto'] = $value['produto'];
         $registro['marca'] = $value['marca'];
-
         $id = $value['id'];
-
         $registro['button'] = '
-        <button class="button is-info is-light" onclick="createProducts('.$value['id'].')" id="modal"> <i clss="fa-solid fa-cabinet-filing"> 
-        </i> <i class="fa-solid fa-folder-closed"> </i> </button>
-
-        <button class="button is-danger is-light" onclick="deletarUsuario('.$value['id'].')"> <i class="fa-solid fa-trash-can"></i></button>';
+            <button class="button is-info is-light" onclick="createProdutos('.$value['id'].')"> 
+                <i class="fa-solid fa-folder-closed"> </i> 
+            </button>
+            <button class="button is-danger is-light" onclick="deletarProduto('.$value['id'].')"> 
+                <i class="fa-solid fa-trash-can"></i>
+            </button>
+        ';
         
         $data[] = $registro;
     }
@@ -57,7 +55,10 @@ class ProdutosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $requestProdutos = $request->all();  
+        $storeProdutos = Produtos::create($requestProdutos);
+        return view('Produtos.todosProdutos');
+
     }
 
     /**

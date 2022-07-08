@@ -21,6 +21,7 @@
   <thead>
     <tr>
       <th scope="col">Marca</th>
+      <th scope="col">Produto</th>
       <th scope="col">Edit | Delete</th>
     </tr>
   </thead>
@@ -34,11 +35,13 @@
 <script type="text/javascript">
   $(document).ready(function() {
    $('#tableUsuarios').DataTable( {
-    "ajax": "/api/client",
+    "ajax": "/api/marcas",
     "columns": [
-    {"data":"cnpj" },
+    {"data":"marca" },
+    {"data":"produto" },
     {"data":"button" }
     ]
+
   } );
  } );
 

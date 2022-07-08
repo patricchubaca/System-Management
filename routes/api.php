@@ -3,11 +3,12 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\ClientController;
-use App\Http\Controllers\ProviderController;
-use App\Http\Controllers\ProductsController;
+use App\Http\Controllers\ClientesController;
+use App\Http\Controllers\FornecedoresController;
+use App\Http\Controllers\ProdutosController;
 use App\Http\Controllers\PortaisController;
 use App\Http\Controllers\CompaniesController;
+use App\Http\Controllers\MarcasController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,16 +24,19 @@ use App\Http\Controllers\CompaniesController;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) { return $request->user(); });
 
 ##################### Client #########################
-Route::get('/client', [ClientController::class, 'index']);
+Route::get('/clientes', [ClientesController::class, 'index']);
 
 ##################### Providers #########################
-Route::get('/providers', [ProviderController::class, 'index']);
+Route::get('/fornecedores', [FornecedoresController::class, 'index']);
 
 ##################### Produtos #########################
-Route::get('/produtos', [ProductsController::class, 'index']);
+Route::get('/produtos', [ProdutosController::class, 'index']);
 
 ##################### Portais de Compra #########################
 Route::get('/portais', [PortaisController::class, 'index']);
 
 ##################### Portais de Compra #########################
 Route::get('/empresas', [CompaniesController::class, 'index']);
+
+##################### Marcas #########################
+Route::get('/marcas', [MarcasController::class, 'index']);

@@ -23,7 +23,7 @@ class CotacaoController extends Controller
      */
     public function create()
     {
-        return view('Cotacao.todosCotacao');
+        return view('Cotacao.novoCotacao');
     }
 
     /**
