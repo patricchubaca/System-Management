@@ -9,7 +9,7 @@
     </div>
     <div class="col-md-7 col-lg-12 mt-1 border">
 
-     <form class="needs-validation  px-5 py-1 mt-1" method="POST" action="{{route('marca')}}">
+     <form class="needs-validation  px-5 py-1 mt-1" method="POST" action="{{ url('marcas/' . $findMarcas['id']) }}">
       @csrf
       <div class="mb-5">
         <div class="alert border" role="alert">

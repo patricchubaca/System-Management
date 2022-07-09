@@ -21,11 +21,13 @@ class EmpresasController extends Controller
             $registro['id'] = $value['id'];
             $registro['cnpj'] = $value['cnpj'];
             $registro['button'] = '
-            <button class="button is-info is-light"onclick=" createCompanies(' . $value['id'] . ')">
-            <i clss="fa-solid fa-cabinet-filing"> </i>
-            <i class="fa-solid fa-folder-closed"></i></button>
-
-            <button class="button is-danger is-light" onclick="deletarUsuario(' . $value['id'] . ')"><i class="fa-solid fa-trash-can"></i></button>';
+                <button class="button is-info is-light"onclick=" createEmpresas(' . $value['id'] . ')">
+                    <i class="fa-solid fa-folder-closed"> </i>
+                </button>
+                <button class="button is-danger is-light" onclick="deletarEmpresas(' . $value['id'] . ')">
+                    <i class="fa-solid fa-trash-can"> </i>
+                </button>
+            ';
             $data[] = $registro;
         }
 
@@ -50,7 +52,9 @@ class EmpresasController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $requestEmpresa = $request->all();
+        Empresas::create($requestEmpresa);
+        return view('Empresas.todasEmpresasCadastradas');
     }
 
     /**
@@ -61,7 +65,9 @@ class EmpresasController extends Controller
      */
     public function show($id)
     {
-        //
+        $modelEmpresa = new Empresas();
+        $findEmpresas = $modelEmpresa->find($id);
+        return view('Empresas.editeEmpresasCadastradas',compact('findEmpresas'));
     }
 
     /**
@@ -95,6 +101,8 @@ class EmpresasController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $destroyEmpresas = Empresas::findOrFail($id)->delete();
+
+        return $destroyEmpresas;
     }
 }

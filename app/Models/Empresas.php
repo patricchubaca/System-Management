@@ -16,16 +16,17 @@ class Empresas extends Model
 
   public $timestamps = false;
 
-
   protected $fillable =[
 
      'id',
      'razaoSocial',
      'inscricaoEstadual',
      'cnpj',
+     'email',
      'rua',
      'bairro',
      'cidade',
+     'numero',
      'cep',
      'telefone',
      'email'

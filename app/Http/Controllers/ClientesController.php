@@ -24,10 +24,10 @@ class ClientesController extends Controller
             $registro['uasg'] = $value['uasg'];
             $registro['cnpj'] = $value['cnpj'];
             $registro['button'] = '
-                <button class="button is-info is-light" onclick="criateCliente(' . $value['id'] . ')">
+                <button class="button is-info is-light" onclick="createClientes(' . $value['id'] . ')">
                     <i class="fa-solid fa-folder-closed"> </i>
                 </button>
-                <button class="button is-danger is-light" onclick="deletarCliente(' . $value['id'] . ')">
+                <button class="button is-danger is-light" onclick="deleteClientes(' . $value['id'] . ')">
                     <i class="fa-solid fa-trash-can"> </i>
                 </button>
             ';
@@ -56,9 +56,7 @@ class ClientesController extends Controller
     public function store(Request $request)
     {
         $diceClient = $request->all();
-
-        $createCliente = Clientes::create($diceClient);
-
+        Clientes::create($diceClient);
         return view('Clientes.todosCliente');
     }
 
@@ -71,8 +69,8 @@ class ClientesController extends Controller
     public function show($id)
     {
         $modelCliente = new Clientes();
-        $findCar = $modelCliente->find($id);
-        return view('Clientes.editeCliente', compact('findCar'));
+        $findCliente = $modelCliente->find($id);
+        return view('Clientes.editeCliente', compact('findCliente'));
     }
 
     /**
@@ -106,6 +104,8 @@ class ClientesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $destroyClientes = Clientes::findOrFail($id)->delete();
+
+        return $destroyClientes;
     }
 }

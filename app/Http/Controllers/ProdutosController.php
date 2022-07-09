@@ -25,8 +25,8 @@ class ProdutosController extends Controller
             <button class="button is-info is-light" onclick="createProdutos('.$value['id'].')"> 
                 <i class="fa-solid fa-folder-closed"> </i> 
             </button>
-            <button class="button is-danger is-light" onclick="deletarProduto('.$value['id'].')"> 
-                <i class="fa-solid fa-trash-can"></i>
+            <button class="button is-danger is-light" onclick="deleteProdutos('.$value['id'].')"> 
+                <i class="fa-solid fa-trash-can"> </i>
             </button>
         ';
         
@@ -56,7 +56,7 @@ class ProdutosController extends Controller
     public function store(Request $request)
     {
         $requestProdutos = $request->all();  
-        $storeProdutos = Produtos::create($requestProdutos);
+        Produtos::create($requestProdutos);
         return view('Produtos.todosProdutos');
 
     }
@@ -67,9 +67,12 @@ class ProdutosController extends Controller
      * @param  \App\Models\Produtos  $produtos
      * @return \Illuminate\Http\Response
      */
-    public function show(Produtos $produtos)
+    public function show(Produtos $id)
     {
-        //
+        $modelProdutos = new Produtos();
+        $findProdutos = $modelProdutos->find($id);
+        
+        return view('Produtos.editeProduto', compact('findProdutos'));
     }
 
     /**
@@ -101,8 +104,10 @@ class ProdutosController extends Controller
      * @param  \App\Models\Produtos  $produtos
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Produtos $produtos)
+    public function destroy(Produtos $id)
     {
-        //
+        $destroyProdutos = Produtos::findOrFail($id)->delete();
+
+        return $destroyProdutos;
     }
 }

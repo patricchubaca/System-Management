@@ -80,6 +80,7 @@ CREATE TABLE IF NOT EXISTS `empresas` (
   `cep` varchar (220) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `telefone` varchar (220) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `email` varchar (220) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `numero` varchar (220) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   PRIMARY KEY (`id`)
 ) ENGINE = InnoDB AUTO_INCREMENT = 0 DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
 

@@ -20,10 +20,14 @@ class PortaisController extends Controller
             $registro['id'] = $value['id'];
             $registro['login'] = $value['login'];
             $registro['portal'] = $value['portal'];
-            $registro['button'] = '<button class="button is-info is-light" onclick="createPortais('.$value['id'].')"
-            id="modal"><i clss="fa-solid fa-cabinet-filing"></i><i class="fa-solid fa-folder-closed"></i></button>
-
-            <button class="button is-danger is-light" onclick="deletarUsuario('.$value['id'].')"><i class="fa-solid fa-trash-can"></i></button>';
+            $registro['button'] = '
+                <button class="button is-info is-light" onclick="createPortais('.$value['id'].')" >
+                <i class="fa-solid fa-folder-closed"> </i> 
+                </button>
+                <button class="button is-danger is-light" onclick="deletePrtais('.$value['id'].')">
+                    <i class="fa-solid fa-trash-can"> </i> 
+                </button>
+            ';
             $data[] = $registro;
         }
 
@@ -49,7 +53,9 @@ class PortaisController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $requestProdutos = $request->all();  
+        Portais::create($requestProdutos);
+        return view('Canais.todosCanaisCompras');
     }
 
     /**
@@ -58,9 +64,11 @@ class PortaisController extends Controller
      * @param  \App\Models\Portais  $portais
      * @return \Illuminate\Http\Response
      */
-    public function show(Portais $portais)
+    public function show(Portais $id)
     {
-        //
+        $modelPortais = new Portais();
+        $findPortais = $modelPortais->find($id);
+        return view('Canais.editeCanais',compact('findPortais'));
     }
 
     /**
@@ -92,8 +100,10 @@ class PortaisController extends Controller
      * @param  \App\Models\Portais  $portais
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Portais $portais)
+    public function destroy(Portais $id)
     {
-        //
+        $destroyPortais = Portais::findOrFail($id)->delete();
+
+        return $destroyPortais;
     }
 }

@@ -8,7 +8,7 @@
     <main>
     </div>
     <div class="col-md-7 col-lg-12 mt-1 border">
-     <form class="needs-validation  px-5 py-1 mt-1" method="POST" action="{{route ('/empresa') }}">
+     <form class="needs-validation  px-5 py-1 mt-1" method="POST" action="{{ url('empresas/' . $findEmpresas['id']) }}">
       @csrf
       <div class="mb-5">
         <div class="alert border" role="alert">
@@ -161,7 +161,7 @@
         </div>
       </div>
       <hr class="col-12">
-      <button class="w-100 btn btn-primary btn-lg" type="submit">Registrar</button>
+      <button class="w-100 btn btn-primary btn-lg" type="submit">Editar Empresa</button>
     </div>
   </div>
 </form>

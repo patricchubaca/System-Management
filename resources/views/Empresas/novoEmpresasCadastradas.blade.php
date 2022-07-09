@@ -1,172 +1,128 @@
 @extends('dashboard')
 
 @section('content')
+    <section class="section">
 
-<section  class="section">
-
-  <div class="container ">
-    <main>
-    </div>
-    <div class="col-md-7 col-lg-12 mt-1 border">
-     <form class="needs-validation  px-5 py-1 mt-1" method="POST" action="{{route ('storeEmpresa') }}">
-      @csrf
-      <div class="mb-5">
-        <div class="alert border" role="alert">
-         <h1 class="mt-3">Minhas Empresas</h1>
-       </div>
-     </div>
-
-     <div class="row g-3 mt-3">
-      <div class="col-sm-6">
-        <label for="firstName" class="form-label">Marca</label>
-        <input type="text" class="form-control" id="firstName" placeholder="Mercedes-benz Classe A" name="marca" required>
-        <div class="invalid-feedback">
-          Valid first name is required.
+        <div class="container ">
+            <main>
         </div>
-      </div>
+        <div class="col-md-7 col-lg-12 mt-1 border">
+            <form class="needs-validation  px-5 py-1 mt-1" method="POST" action="{{ route('storeEmpresa') }}">
+                @csrf
+                <div class="mb-5">
+                    <div class="alert border" role="alert">
+                        <h1 class="mt-3">Dados Empresa</h1>
+                    </div>
+                </div>
 
-      <div class="col-sm-6">
-        <label for="lastName" class="form-label">Modelo</label>
-        <input type="text" class="form-control" id="lastName" placeholder="Mercedes-Benz" value="" name="modelo" required>
-        <div class="invalid-feedback">
-          Valid last name is required.
+                <div class="row g-3 mt-3">
+                    <div class="col-sm-6">
+                        <label for="firstName" class="form-label">Razao Social</label>
+                        <input type="text" class="form-control" id="firstName" placeholder="SISCOTA COTAÇÕES LTDA"
+                            name="razaoSocial" required>
+                        <div class="invalid-feedback">
+                            Valid first name is required.
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <label for="lastName" class="form-label">Inscrição Estadual</label>
+                        <input type="text" class="form-control" id="lastName" placeholder="S I LTDA" value=""
+                            name="inscricaoEstadual" required>
+                        <div class="invalid-feedback">
+                            Valid last name is required.
+                        </div>
+                    </div>
+
+                    <div class="col-md-5">
+                        <label for="country" class="form-label">CNPJ</label>
+                        <input type="text" class="form-control" id="lastName" placeholder="00.438.402/0001-72"
+                            value="" name="cnpj" required>
+                        <div class="invalid-feedback">
+                            Valid last name is required.
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <label for="state" class="form-label">E-mail</label>
+                        <input type="text" class="form-control" id="lastName" placeholder="si@outlook.com"
+                            value="" name="email" required>
+                        <div class="invalid-feedback">
+                            Valid last name is required.
+                        </div>
+                        <div class="invalid-feedback">
+                            Please provide a valid state.
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <label for="zip" class="form-label">Contato</label>
+                        <input type="text" class="form-control" id="zip" placeholder="(41)9 9725-3521"
+                            name="telefone" required>
+                        <div class="invalid-feedback">
+                            Zip code required.
+                        </div>
+                    </div>
+
+                    <hr class="my-4">
+
+                    <h2 class="mb-3 mt-5">Endereço</h2>
+                    <div class="row g-3 mt-4">
+                        <div class="col-sm-2">
+                            <label for="firstName" class="form-label">CEP</label>
+                            <input type="text" class="form-control" placeholder="83507-382" name="cep" required>
+                            <div class="invalid-feedback">
+                                Valid first name is required.
+                            </div>
+                        </div>
+
+                        <div class="col-sm-4">
+                            <label for="lastName" class="form-label">Rua</label>
+                            <input type="text" class="form-control" placeholder="Avenida Sete de Setembro" name="rua"
+                                value="" required>
+                            <div class="invalid-feedback">
+                                Valid last name is required.
+                            </div>
+                        </div>
+
+                        <div class="col-sm-4">
+                            <label for="country" class="form-label">Bairro</label>
+                            <input type="text" class="form-control" id="lastName" placeholder="Água verde"
+                                name="bairro" value="" required>
+                            <div class="invalid-feedback">
+                                Valid last name is required.
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <label for="state" class="form-label">Cidade</label>
+                            <input type="text" class="form-control" id="lastName" placeholder="Curitiba" value=""
+                                name="cidade" required>
+                            <div class="invalid-feedback">
+                                Valid last name is required.
+                            </div>
+                            <div class="invalid-feedback">
+                                Please provide a valid state.
+                            </div>
+                        </div>
+
+                        <div class="col-sm-2">
+                            <label for="country" class="form-label">Numero</label>
+                            <input type="text" class="form-control" id="lastName" placeholder="1357" value=""
+                                name="numero" required>
+                            <div class="invalid-feedback">
+                                Valid last name is required.
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr class="col-12">
+                    <button class="w-100 btn btn-primary btn-lg" type="submit">Registrar Empresa</button>
+                </div>
         </div>
-      </div>
-
-
-
-      <div class="col-md-5">
-        <label for="country" class="form-label">Placa</label>
-        <input type="text" class="form-control" id="lastName" placeholder="BRZ7S19" value="" name="placa" required>
-        <div class="invalid-feedback">
-          Valid last name is required.
+        </form>
         </div>
-      </div>
-
-      <div class="col-md-4">
-        <label for="state" class="form-label">Cor</label>
-        <input type="text" class="form-control" id="lastName" placeholder="Branco" value="" name="cor" required>
-        <div class="invalid-feedback">
-          Valid last name is required.
         </div>
-        <div class="invalid-feedback">
-          Please provide a valid state.
-        </div>
-      </div>
-
-      <div class="col-md-3">
-        <label for="zip" class="form-label">Ano</label>
-        <input type="text" class="form-control" id="zip" placeholder="2018" name="ano" required>
-        <div class="invalid-feedback">
-          Zip code required.
-        </div>
-      </div>
-
-    <hr class="my-4">
-    <h2 class="mb-3 mt-5">Pendencias ?</h2>
-    <div class="row g-3 mt-5">
-      <div class="col-sm-6">
-        <label for="firstName" class="form-label">Divida</label>
-        <input type="text" class="form-control" id="firstName" placeholder="Pendencias do Veiculo" name="divida" value="" required>
-        <div class="invalid-feedback">
-          Valid first name is required.
-        </div>
-      </div>
-
-      <div class="col-sm-6">
-        <label for="lastName" class="form-label">Financiamento</label>
-        <input type="text" class="form-control" id="lastName" placeholder="Pendencias do Veiculo" name="financiamento" value="" required>
-        <div class="invalid-feedback">
-          Valid last name is required.
-        </div>
-      </div>
-
-
-
-      <div class="col-md-5">
-        <label for="country" class="form-label">Quitação</label>
-        <input type="text" class="form-control" id="lastName" placeholder="30 X 1220,00" name="quitacao" value="" required>
-        <div class="invalid-feedback">
-          Valid last name is required.
-        </div>
-      </div>
-
-      <div class="col-md-4">
-        <label for="state" class="form-label">Multa</label>
-        <input type="text" class="form-control" id="lastName" placeholder="Multas vinculadas ao Veiculo" value="" name="multa" required>
-        <div class="invalid-feedback">
-          Valid last name is required.
-        </div>
-        <div class="invalid-feedback">
-          Please provide a valid state.
-        </div>
-      </div>
-
-      <div class="col-md-3">
-        <label for="zip" class="form-label">IPVA</label>
-        <input type="text" class="form-control" id="zip" placeholder="IPVA Veiculo" name="ipva" required>
-        <div class="invalid-feedback">
-          Zip code required.
-        </div>
-      </div>
-      <div class="col-md-3">
-        <label for="country" class="form-label">Licensiamento</label>
-        <input type="text" class="form-control" id="lastName" placeholder="10 X 125,30" value="" name="licensiamento" required>
-        <div class="invalid-feedback">
-          Valid last name is required.
-        </div>
-      </div>
-      <div class="col-md-6">
-        <label for="country" class="form-label">Outros</label>
-        <input type="text" class="form-control" id="lastName" placeholder="" value="" name="outros" required>
-        <div class="invalid-feedback">
-          Valid last name is required.
-        </div>
-      </div>
-    </div>
-
-    <hr class="my-4">
-
-    <h2 class="mb-5 ">Dados Venda</h2>
-
-    <div class="row gy-3 mt-1">
-      <div class="col-md-8">
-        <label for="cc-name" class="form-label">Nome do vendedor</label>
-        <input type="text" class="form-control" id="cc-name" placeholder="" name="nomeVendedor" required>
-        <small class="text-muted">   Nome completo do vendedor</small>
-        <div class="invalid-feedback">
-
-        </div>
-      </div>
-      <div class="col-md-3">
-        <label for="cc-expiration" class="form-label">Valor da venda</label>
-        <input type="text" class="form-control" id="cc-expiration" placeholder="" name="valorVenda" required>
-        <div class="invalid-feedback">
-          Expiration date required
-        </div>
-      </div>
-
-      <div class="col-md-3">
-        <label for="cc-cvv" class="form-label">Data entrada</label>
-        <input type="date" class="form-control" id="cc-cvv" placeholder="" name="dataEntrada" required>
-        <div class="invalid-feedback">
-          Security code required
-        </div>
-      </div>
-      <div class="col-md-3">
-        <label for="cc-cvv" class="form-label">Data saida</label>
-        <input type="date" class="form-control" format="mm-dd-yyyy" name="dataSaida" required>
-        <div class="invalid-feedback">
-          Security code required
-        </div>
-      </div>
-      <hr class="col-12">
-      <button class="w-100 btn btn-primary btn-lg" type="submit">Registrar</button>
-    </div>
-  </div>
-</form>
-</div>
-</div>
-</main>
-</section>  
+        </main>
+    </section>
 @endsection

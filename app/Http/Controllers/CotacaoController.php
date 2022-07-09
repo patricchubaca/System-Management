@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cotacao;
 use Illuminate\Http\Request;
 
 class CotacaoController extends Controller
@@ -13,7 +14,23 @@ class CotacaoController extends Controller
      */
     public function index()
     {
-        
+        $all = Cotacao::all();
+        foreach ($all as $key => $value) {
+            $registro = [];
+            $registro['id'] = $value['id'];
+            $registro['cnpj'] = $value['cnpj'];
+            $registro['button'] = '
+                <button class="button is-info is-light"onclick=" createCotacao(' . $value['id'] . ')">
+                    <i class="fa-solid fa-folder-closed"> </i>
+                </button>
+                <button class="button is-danger is-light" onclick="deletarCotacao(' . $value['id'] . ')">
+                    <i class="fa-solid fa-trash-can"> </i>
+                </button>
+            ';
+            $data[] = $registro;
+        }
+
+        return ['data' => $data];
     }
 
     /**
@@ -34,7 +51,10 @@ class CotacaoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $modelCotacao =  new Cotacao();
+        $requestCotacao = $request->all();
+        $modelCotacao::created($requestCotacao);
+        return view('Cotacao.todosCotacao');
     }
 
     /**
@@ -45,7 +65,9 @@ class CotacaoController extends Controller
      */
     public function show($id)
     {
-        //
+        $modelCotacao = new Cotacao();
+        $findCotacao = $modelCotacao->find($id);
+        return view('Cotacao.editeCotacao',compact('findCotacao'));
     }
 
     /**
@@ -79,6 +101,8 @@ class CotacaoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $destroyCotacao = Cotacao::findOrFail($id)->delete();
+
+        return $destroyCotacao;
     }
 }

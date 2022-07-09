@@ -8,10 +8,10 @@
     <main>
     </div>
     <div class="col-md-7 col-lg-12 mt-5 border">
-     <form class="needs-validation  px-5 py-1 mt-1" method="POST" action="">
+     <form class="needs-validation  px-5 py-1 mt-1" method="POST" action="{{ url('canais/' . $findCanais['id']) }}">
       @csrf
       <div class="mb-5">
-        <h1 class="mt-5">Canais de Compras</h1>
+        <h1 class="mt-5"> Dados Canais de Compras</h1>
       </div>
       <div class="row g-3 mt-5">
         <div class="col-sm-6">

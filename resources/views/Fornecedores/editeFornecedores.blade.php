@@ -9,16 +9,16 @@
     </div>
     <div class="col-md-7 col-lg-12 mt-1 border">
 
-     <form class="needs-validation  px-5 py-1 mt-1" method="POST" action="{{route ('/fornecedores') }}">
+     <form class="needs-validation  px-5 py-1 mt-1" method="POST" action="{{ url('fornecedores/' . $findFornecedores['id']) }}">
       @csrf
       <div class="alert border" role="alert">
-             <h1 class="mx-2 my-2">Fornecedor</h1>
+             <h1 class="mx-2 my-2">Dados Fornecedor</h1>
       </div>
   
       <div class="row g-3 mt-3">
         <div class="col-sm-8">
           <label for="firstName" class="form-label">Fornecedor</label>
-          <input type="text" class="form-control" id="firstName" placeholder="SOLIDSTEEL" name="fornecedor" required>
+          <input type="text" class="form-control" id="firstName" placeholder="SOLIDSTEEL" name="fornecedor" value="{{$findFornecedores['fornecedor'])}}" required>
           <div class="invalid-feedback">
             Valid first name is required.
           </div>

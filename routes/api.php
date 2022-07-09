@@ -7,7 +7,7 @@ use App\Http\Controllers\ClientesController;
 use App\Http\Controllers\FornecedoresController;
 use App\Http\Controllers\ProdutosController;
 use App\Http\Controllers\PortaisController;
-use App\Http\Controllers\CompaniesController;
+use App\Http\Controllers\EmpresasController;
 use App\Http\Controllers\MarcasController;
 
 /*
@@ -23,20 +23,26 @@ use App\Http\Controllers\MarcasController;
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) { return $request->user(); });
 
-##################### Client #########################
+##################### Clientes #########################
 Route::get('/clientes', [ClientesController::class, 'index']);
+Route::delete('/cliente/{id}', [ClientesController::class, 'destroy']);
 
-##################### Providers #########################
+##################### Fornecedores #########################
 Route::get('/fornecedores', [FornecedoresController::class, 'index']);
+Route::delete('/fornecedores/{id}', [FornecedoresController::class, 'destroy']);
 
 ##################### Produtos #########################
 Route::get('/produtos', [ProdutosController::class, 'index']);
+Route::delete('/produtos/{id}', [ProdutosController::class, 'destroy']);
 
 ##################### Portais de Compra #########################
 Route::get('/portais', [PortaisController::class, 'index']);
+Route::delete('/portais/{id}', [PortaisController::class, 'destroy']);
 
 ##################### Portais de Compra #########################
-Route::get('/empresas', [CompaniesController::class, 'index']);
+Route::get('/empresas', [EmpresasController::class, 'index']);
+Route::delete('/empresas/{id}', [EmpresasController::class, 'destroy']);
 
 ##################### Marcas #########################
 Route::get('/marcas', [MarcasController::class, 'index']);
+Route::delete('/marcas/{id}', [MarcasController::class, 'destroy']);

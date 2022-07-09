@@ -14,17 +14,24 @@ class FornecedoresController extends Controller
      */
     public function index()
     {
-       $todosFornecedores = Fornecedores::all();
-       foreach($todosFornecedores as $key => $value ){
-        $registros = [];
-        $registros['id'] = $value['id'];
-        $registros['cnpj'] = $value['cnpj'];
-        $registros['fornecedor'] = $value['fornecedor'];
-        $registros['button'] = '';
-        $data[] = $registros;
-       }
+        $todosFornecedores = Fornecedores::all();
+        foreach ($todosFornecedores as $key => $value) {
+            $registros = [];
+            $registros['id'] = $value['id'];
+            $registros['cnpj'] = $value['cnpj'];
+            $registros['fornecedor'] = $value['fornecedor'];
+            $registros['button'] = '
+                <button class="button is-info is-light"onclick=" createFornecedores(' . $value['id'] . ')">
+                    <i class="fa-solid fa-folder-closed"> </i>
+                </button>
+                <button class="button is-danger is-light" onclick="deletarFornecedores(' . $value['id'] . ')">
+                    <i class="fa-solid fa-trash-can"> </i>
+                </button>
+            ';
+            $data[] = $registros;
+        }
 
-       return ['data' => $data ];
+        return ['data' => $data];
     }
 
     /**
@@ -46,11 +53,8 @@ class FornecedoresController extends Controller
     public function store(Request $request)
     {
         $storeRequestFornecedores = $request->all();
-
-        $storeFornecedores = Fornecedores::create($storeRequestFornecedores);
-
+        Fornecedores::create($storeRequestFornecedores);
         return view('Fornecedores.todosFornecedores');
-
     }
 
     /**
@@ -61,7 +65,10 @@ class FornecedoresController extends Controller
      */
     public function show($id)
     {
-        //
+        $modelFornecedores = new Fornecedores();
+        $findFornecedores = $modelFornecedores->find($id);
+      
+        return view('Fornecedores.editeFornecedores',compact('findFornecedores'));
     }
 
     /**
@@ -95,6 +102,8 @@ class FornecedoresController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $destroyFornecedores = Fornecedores::findOrFail($id)->delete();
+
+        return $destroyFornecedores;
     }
 }

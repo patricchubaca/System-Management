@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Portais;
 use Illuminate\Http\Request;
 
 class CanaisController extends Controller
@@ -13,7 +14,24 @@ class CanaisController extends Controller
      */
     public function index()
     {
-        //
+        //createCanais
+        $all = Portais::all();
+        foreach ($all as $key => $value) {
+            $registro = [];
+            $registro['id'] = $value['id'];
+            $registro['cnpj'] = $value['cnpj'];
+            $registro['button'] = '
+                <button class="button is-info is-light"onclick=" createCanais(' . $value['id'] . ')">
+                    <i class="fa-solid fa-folder-closed"> </i>
+                </button>
+                <button class="button is-danger is-light" onclick="deletarCanais(' . $value['id'] . ')">
+                    <i class="fa-solid fa-trash-can"> </i>
+                </button>
+            ';
+            $data[] = $registro;
+        }
+
+        return ['data' => $data];
     }
 
     /**
@@ -34,7 +52,9 @@ class CanaisController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $requestCanais = $request->all();
+        Portais::created($requestCanais);
+        return view('Canais.todosCanaisCompras');
     }
 
     /**
@@ -45,7 +65,9 @@ class CanaisController extends Controller
      */
     public function show($id)
     {
-        //
+        $modelCanais = new Portais();
+        $findCanais = $modelCanais->find($modelCanais);
+        return view('Canais.editeCanais',compact('findCanais'));
     }
 
     /**
@@ -79,6 +101,8 @@ class CanaisController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $destroyPortais = Portais::findOrFail($id)->delete();
+
+        return $destroyPortais;
     }
 }

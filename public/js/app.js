@@ -1,4 +1,4 @@
-async function createCliente(id){
+async function createClientsddde(id){
 
    const dados = await fetch('/api/cliente/'+id);
    const res = dados.json();

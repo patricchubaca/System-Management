@@ -27,7 +27,7 @@
 
       <div class="col-sm-6">
         <label for="lastName" class="form-label">Produto</label>
-        <input type="text" class="form-control" id="lastName" placeholder="Fogão 8 Bocas" value="" name="modelo" required>
+        <input type="text" class="form-control" id="lastName" placeholder="Fogão 8 Bocas" name="modelo" required>
         <div class="invalid-feedback">
           Valid last name is required.
         </div>

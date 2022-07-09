@@ -14,24 +14,25 @@ class MarcasController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    { {
+    { 
             $all = Marcas::all();
             foreach ($all as $key => $value) {
                 $registro = [];
                 $registro['id'] = $value['id'];
                 $registro['marca'] = $value['marca'];
                 $registro['produto'] = $value['produto'];
-
-                $registro['button'] = '<button class="button is-info is-light" onclick="createProvider(' . $value['id'] . ')"
-            id="modal"><i clss="fa-solid fa-cabinet-filing"></i><i class="fa-solid fa-folder-closed"></i></button>
-
-            <button class="button is-danger is-light" onclick="deletarUsuario(' .  $value['id'] . ')"><i class="fa-solid fa-trash-can"></i></button>';
+                $registro['button'] = '
+                    <button class="button is-info is-light" onclick="createMarcas(' . $value['id'] . ')">
+                        <i class="fa-solid fa-folder-closed"> </i>
+                    </button>
+                    <button class="button is-danger is-light" onclick="deleteMarca(' .  $value['id'] . ')">
+                        <i class="fa-solid fa-trash-can"> </i>
+                    </button>
+                ';
                 $data[] = $registro;
             }
-
             return ['data' => $data];
         }
-    }
 
     /**
      * Show the form for creating a new resource.
@@ -52,8 +53,7 @@ class MarcasController extends Controller
     public function store(Request $request)
     {
         $requestProdutos = $request->all();  
-        $storeProdutos = Marcas::create($requestProdutos);
-
+        Marcas::create($requestProdutos);
         return view('Marcas.todosMarcas');
     }
 
@@ -65,7 +65,9 @@ class MarcasController extends Controller
      */
     public function show($id)
     {
-        //
+        $modelMarcas = new Marcas();
+        $findMarcas = $modelMarcas->find($id);
+        return view('Marcas.editeMarcas',compact('findMarcas'));
     }
 
     /**
@@ -99,6 +101,8 @@ class MarcasController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $destroyMarcas = Marcas::findOrFail($id)->delete();
+
+        return $destroyMarcas;
     }
 }
