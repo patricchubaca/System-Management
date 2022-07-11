@@ -7,7 +7,7 @@
   }
 
   function createFornecedores(id) {
-    window.location.href = "/fornecedores/" + id;
+    window.location.href = "/fornecedor/" + id;
 }
 
   function createProdutos(id) {

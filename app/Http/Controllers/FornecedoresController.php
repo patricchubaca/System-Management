@@ -21,10 +21,10 @@ class FornecedoresController extends Controller
             $registros['cnpj'] = $value['cnpj'];
             $registros['fornecedor'] = $value['fornecedor'];
             $registros['button'] = '
-                <button class="button is-info is-light"onclick=" createFornecedores(' . $value['id'] . ')">
+                <button class="button is-info is-light" onclick=" createFornecedores(' . $value['id'] . ')">
                     <i class="fa-solid fa-folder-closed"> </i>
                 </button>
-                <button class="button is-danger is-light" onclick="deletarFornecedores(' . $value['id'] . ')">
+                <button class="button is-danger is-light" onclick="deleteFornecedores(' . $value['id'] . ')">
                     <i class="fa-solid fa-trash-can"> </i>
                 </button>
             ';

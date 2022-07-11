@@ -13,7 +13,7 @@
       @csrf
      <div class="mb-5">
         <div class="alert border " role="alert">
-         <h1 class="mt-3">Produtos</h1>
+         <h1 class="mt-3">Produto</h1>
        </div>
      </div>
       <div class="row g-3 mt-3">

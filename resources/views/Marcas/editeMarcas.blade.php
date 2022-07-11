@@ -19,7 +19,7 @@
      <div class="row g-3 mt-3">
       <div class="col-sm-6">
         <label for="firstName" class="form-label">Marca</label>
-        <input type="text" class="form-control" id="firstName" placeholder="SOLIDSTEEL" name="marca" required>
+        <input type="text" class="form-control" id="firstName" placeholder="SOLIDSTEEL" value="{{($findMarcas['marca'])}}"  name="marca" required>
         <div class="invalid-feedback">
           Valid first name is required.
         </div>
@@ -27,7 +27,7 @@
 
       <div class="col-sm-6">
         <label for="lastName" class="form-label">Produto</label>
-        <input type="text" class="form-control" id="lastName" placeholder="Fogão 8 Bocas" value="" name="modelo" required>
+        <input type="text" class="form-control" id="lastName" placeholder="Fogão 8 Bocas" value="{{($findMarcas['produto'])}}" name="modelo" required>
         <div class="invalid-feedback">
           Valid last name is required.
         </div>

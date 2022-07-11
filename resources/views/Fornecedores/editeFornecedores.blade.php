@@ -18,7 +18,7 @@
       <div class="row g-3 mt-3">
         <div class="col-sm-8">
           <label for="firstName" class="form-label">Fornecedor</label>
-          <input type="text" class="form-control" id="firstName" placeholder="SOLIDSTEEL" name="fornecedor" value="{{$findFornecedores['fornecedor'])}}" required>
+          <input type="text" class="form-control" id="firstName" placeholder="SOLIDSTEEL" name="fornecedor" value="{{($findFornecedores['fornecedor'])}}" required>
           <div class="invalid-feedback">
             Valid first name is required.
           </div>
@@ -26,7 +26,7 @@
 
         <div class="col-sm-4">
           <label for="lastName" class="form-label">CNPJ</label>
-          <input type="number" class="form-control" id="lastName" placeholder="21.474.350/0001-60" value="" name="cnpj" required>
+          <input type="number" class="form-control" id="lastName" placeholder="21.474.350/0001-60" value="{{($findFornecedores['cnpj'])}}" name="cnpj" required>
           <div class="invalid-feedback">
             Valid last name is required.
           </div>
@@ -34,7 +34,7 @@
 
         <div class="col-md-3">
           <label for="zip" class="form-label">Inscrição Estadual</label>
-          <input type="text" class="form-control" id="zip" placeholder="388.108.598.269" name="inscricaoEstadual" required>
+          <input type="text" class="form-control" id="zip" placeholder="388.108.598.269" name="inscricaoEstadual" value="{{($findFornecedores['inscricaoEstadual'])}}" required>
           <div class="invalid-feedback">
             Zip code required.
           </div>
@@ -42,7 +42,7 @@
 
         <div class="col-md-5">
           <label for="country" class="form-label">Observações</label>
-          <input type="text" class="form-control" id="lastName" placeholder="Informações adicionais ?" name="observacoes" required>
+          <input type="text" class="form-control" id="lastName" placeholder="Informações adicionais ?" name="observacoes" value="{{($findFornecedores['observacoes'])}}" required>
           <div class="invalid-feedback">
             Valid last name is required.
           </div>
@@ -50,7 +50,7 @@
 
         <div class="col-md-2">
           <label for="state" class="form-label">Isento ?</label>
-          <input type="text" class="form-control" id="lastName" placeholder="SIM" value="" name="isento" required>
+          <input type="text" class="form-control" id="lastName" placeholder="SIM" name="isento" value="{{($findFornecedores['isento'])}}" required>
           <div class="invalid-feedback">
             Valid last name is required.
           </div>
@@ -64,7 +64,7 @@
       <div class="row g-3 mt-4">
         <div class="col-sm-2">
           <label for="firstName" class="form-label">CEP</label>
-          <input type="text" class="form-control"  placeholder="83507-382" name="cep" required>
+          <input type="text" class="form-control"  placeholder="83507-382" name="cep" value="{{($findFornecedores['cep'])}}" required>
           <div class="invalid-feedback">
             Valid first name is required.
           </div>
@@ -72,14 +72,14 @@
 
         <div class="col-sm-4">
           <label for="lastName" class="form-label">Rua</label>
-          <input type="text" class="form-control" placeholder="Avenida Sete de Setembro" name="rua" required>
+          <input type="text" class="form-control" placeholder="Avenida Sete de Setembro" name="rua" value="{{($findFornecedores['rua'])}}" required>
           <div class="invalid-feedback">
             Valid last name is required.
           </div>
         </div>
         <div class="col-sm-4">
           <label for="country" class="form-label">Bairro</label>
-          <input type="text" class="form-control" id="lastName" placeholder="Água verde" name="bairro" required>
+          <input type="text" class="form-control" id="lastName" placeholder="Água verde" name="bairro" value="{{($findFornecedores['bairro'])}}" required>
           <div class="invalid-feedback">
             Valid last name is required.
           </div>
@@ -87,7 +87,7 @@
 
         <div class="col-md-4">
           <label for="state" class="form-label">Cidade</label>
-          <input type="text" class="form-control" id="lastName" placeholder="Curitiba" name="cidade" required>
+          <input type="text" class="form-control" id="lastName" placeholder="Curitiba" name="cidade" value="{{($findFornecedores['cidade'])}}" required>
           <div class="invalid-feedback">
             Valid last name is required.
           </div>
@@ -98,7 +98,7 @@
 
         <div class="col-sm-2">
           <label for="country" class="form-label">Numero</label>
-          <input type="text" class="form-control" id="lastName" placeholder="1357" value="" name="numero" required>
+          <input type="text" class="form-control" id="lastName" placeholder="1357" name="numero" value="{{($findFornecedores['numero'])}}" required>
           <div class="invalid-feedback">
             Valid last name is required.
           </div>
@@ -112,14 +112,14 @@
       <div class="row gy-3 mt-1">
         <div class="col-md-4">
           <label for="cc-name" class="form-label">Contato 01</label>
-          <input type="text" class="form-control" id="cc-name" placeholder="Sandro Luiz Padilha" name="contato1" required>
+          <input type="text" class="form-control" id="cc-name" placeholder="Sandro Luiz Padilha" name="contato1" value="{{($findFornecedores['contato1'])}}" required>
           <div class="invalid-feedback">
 
           </div>
         </div>
         <div class="col-md-4">
           <label for="cc-expiration" class="form-label">Telefone 01</label>
-          <input type="text" class="form-control" id="cc-expiration" placeholder="041 99725 - 1035" name="telefone1" required>
+          <input type="text" class="form-control" id="cc-expiration" placeholder="041 99725 - 1035" name="telefone1" value="{{($findFornecedores['telefone1'])}}" required>
           <div class="invalid-feedback">
             Expiration date required
           </div>
@@ -127,14 +127,14 @@
 
         <div class="col-md-4">
           <label for="cc-cvv" class="form-label">Email 01</label>
-          <input type="text" class="form-control" id="cc-cvv" placeholder="sandro@gmail.com" name="email1" required>
+          <input type="text" class="form-control" id="cc-cvv" placeholder="sandro@gmail.com" name="email1" value="{{($findFornecedores['email1'])}}" required>
           <div class="invalid-feedback">
             Security code required
           </div>
         </div>
         <div class="col-md-6">
           <label for="cc-cvv" class="form-label">Cargo Setor 01</label>
-          <input type="text" class="form-control" placeholder="Diretor Financeiro" name="cargoSetor1" required>
+          <input type="text" class="form-control" placeholder="Diretor Financeiro" name="cargoSetor1" value="{{($findFornecedores['cargoSetor1'])}}" required>
           <div class="invalid-feedback">
             Security code required
           </div>
@@ -142,14 +142,14 @@
         <div class="row gy-3 mt-1">
           <div class="col-md-4">
             <label for="cc-name" class="form-label">Contato 02</label>
-            <input type="text" class="form-control" id="cc-name" placeholder="Fernanda Cabral Bragança" name="contato2" required>
+            <input type="text" class="form-control" id="cc-name" placeholder="Fernanda Cabral Bragança" name="contato2" value="{{($findFornecedores['contato2'])}}" required>
             <div class="invalid-feedback">
 
             </div>
           </div>
           <div class="col-md-4">
             <label for="cc-expiration" class="form-label">Telefone 02</label>
-            <input type="text" class="form-control" id="cc-expiration" placeholder="047 99851 - 3595" name="telefone2" required>
+            <input type="text" class="form-control" id="cc-expiration" placeholder="047 99851 - 3595" name="telefone2" value="{{($findFornecedores['telefone1'])}}" required>
             <div class="invalid-feedback">
               Expiration date required
             </div>
@@ -157,14 +157,14 @@
 
           <div class="col-md-4">
             <label for="cc-cvv" class="form-label">Email 02</label>
-            <input type="text" class="form-control" id="cc-cvv" placeholder="ferbragança@outlook.com" name="email2" required>
+            <input type="text" class="form-control" id="cc-cvv" placeholder="ferbragança@outlook.com" name="email2" value="{{($findFornecedores['email2'])}}" required>
             <div class="invalid-feedback">
               Security code required
             </div>
           </div>
           <div class="col-md-6">
             <label for="cc-cvv" class="form-label">Cargo Setor 02</label>
-            <input type="text" class="form-control" placeholder="Gerente de Compras" name="cargoSetor2" required>
+            <input type="text" class="form-control" placeholder="Gerente de Compras" name="cargoSetor2" value="{{($findFornecedores['cargoSetor2'])}}" required>
             <div class="invalid-feedback">
               Security code required
             </div>

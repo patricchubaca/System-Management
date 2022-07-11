@@ -21,10 +21,10 @@ class EmpresasController extends Controller
             $registro['id'] = $value['id'];
             $registro['cnpj'] = $value['cnpj'];
             $registro['button'] = '
-                <button class="button is-info is-light"onclick=" createEmpresas(' . $value['id'] . ')">
+                <button class="button is-info is-light" onclick="createEmpresas(' . $value['id'] . ')">
                     <i class="fa-solid fa-folder-closed"> </i>
                 </button>
-                <button class="button is-danger is-light" onclick="deletarEmpresas(' . $value['id'] . ')">
+                <button class="button is-danger is-light" onclick="deleteEmpresas(' . $value['id'] . ')">
                     <i class="fa-solid fa-trash-can"> </i>
                 </button>
             ';

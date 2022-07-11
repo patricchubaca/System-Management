@@ -12,7 +12,7 @@
      <form class="needs-validation  px-5 py-1 mt-1" method="POST" action="{{ url('cliente/' . $findCliente['id']) }}">
       @csrf
     <div class="alert border" role="alert">
-      <h1 class="mx-2 my-2">Dados Cliente</h1>
+      <h1 class="mx-2 my-2">Cliente</h1>
     </div>
        <div class="row g-3 mt-3">
         <div class="col-sm-8">

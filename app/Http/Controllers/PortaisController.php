@@ -24,7 +24,7 @@ class PortaisController extends Controller
                 <button class="button is-info is-light" onclick="createPortais('.$value['id'].')" >
                 <i class="fa-solid fa-folder-closed"> </i> 
                 </button>
-                <button class="button is-danger is-light" onclick="deletePrtais('.$value['id'].')">
+                <button class="button is-danger is-light" onclick="deletePortais('.$value['id'].')">
                     <i class="fa-solid fa-trash-can"> </i> 
                 </button>
             ';

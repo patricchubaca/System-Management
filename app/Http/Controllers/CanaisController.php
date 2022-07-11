@@ -24,7 +24,7 @@ class CanaisController extends Controller
                 <button class="button is-info is-light"onclick=" createCanais(' . $value['id'] . ')">
                     <i class="fa-solid fa-folder-closed"> </i>
                 </button>
-                <button class="button is-danger is-light" onclick="deletarCanais(' . $value['id'] . ')">
+                <button class="button is-danger is-light" onclick="deleteCanais(' . $value['id'] . ')">
                     <i class="fa-solid fa-trash-can"> </i>
                 </button>
             ';

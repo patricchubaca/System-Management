@@ -20,10 +20,10 @@ class CotacaoController extends Controller
             $registro['id'] = $value['id'];
             $registro['cnpj'] = $value['cnpj'];
             $registro['button'] = '
-                <button class="button is-info is-light"onclick=" createCotacao(' . $value['id'] . ')">
+                <button class="button is-info is-light" onclick="createCotacao(' . $value['id'] . ')">
                     <i class="fa-solid fa-folder-closed"> </i>
                 </button>
-                <button class="button is-danger is-light" onclick="deletarCotacao(' . $value['id'] . ')">
+                <button class="button is-danger is-light" onclick="deleteCotacao(' . $value['id'] . ')">
                     <i class="fa-solid fa-trash-can"> </i>
                 </button>
             ';

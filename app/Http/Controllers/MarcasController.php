@@ -25,7 +25,7 @@ class MarcasController extends Controller
                     <button class="button is-info is-light" onclick="createMarcas(' . $value['id'] . ')">
                         <i class="fa-solid fa-folder-closed"> </i>
                     </button>
-                    <button class="button is-danger is-light" onclick="deleteMarca(' .  $value['id'] . ')">
+                    <button class="button is-danger is-light" onclick="deleteMarcas(' .  $value['id'] . ')">
                         <i class="fa-solid fa-trash-can"> </i>
                     </button>
                 ';

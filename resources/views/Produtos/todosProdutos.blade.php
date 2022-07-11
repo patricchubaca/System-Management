@@ -10,7 +10,7 @@
     </div>
     <div class="float-end mr-5">
       <a href="{{route('createProduto')}}" type="button" class="button is-solid is-medium">
-        Produtos
+        Produto
         <i class="ml-2 fa-solid fa-earth-asia"></i>
       </a>
     </div>

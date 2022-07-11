@@ -12,13 +12,13 @@
       @csrf
      <div class="mb-5">
         <div class="alert border " role="alert">
-         <h1 class="mt-3">Produtos</h1>
+         <h1 class="mt-3">Produto</h1>
        </div>
      </div>
       <div class="row g-3 mt-3">
         <div class="col-sm-6">
           <label for="firstName" class="form-label">Marca</label>
-          <input type="text" class="form-control" placeholder="Solid" name="marca" required>
+          <input type="text" class="form-control" placeholder="Solid" name="marca"  required>
           <div class="invalid-feedback">
             Valid first name is required.
           </div>

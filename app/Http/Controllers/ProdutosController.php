@@ -73,6 +73,7 @@ class ProdutosController extends Controller
         $findProdutos = $modelProdutos->find($id);
         
         return view('Produtos.editeProduto', compact('findProdutos'));
+        
     }
 
     /**
