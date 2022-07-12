@@ -16,7 +16,6 @@ class Marcas extends Model
     public $timestamps = false;
 
     protected $fillable = [
-
         'id',
         'marca',
         'produto'

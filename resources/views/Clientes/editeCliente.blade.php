@@ -33,7 +33,7 @@
 
         <div class="col-sm-4">
           <label for="lastName" class="form-label">CNPJ</label>
-          <input type="number" class="form-control" id="lastName" placeholder="21474350000160" value="{{$findCliente['cnpj']}}" name="cnpj" required>
+          <input type="text" class="form-control" id="lastName" placeholder="21474350000160" value="{{$findCliente['cnpj']}}" name="cnpj" required>
           <div class="invalid-feedback">
             Valid last name is required.
           </div>

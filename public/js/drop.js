@@ -36,7 +36,7 @@ async function deleteProdutos(id) {
         method: 'DELETE'
     });
 
-    window.location.href = "/clientes";
+    window.location.href = "/produtos";
 }
 
 
@@ -86,3 +86,5 @@ async function deleteEmpresas(id) {
     });
 
     window.location.href = "/clientes";
+
+}

@@ -113,3 +113,31 @@ CREATE TABLE IF NOT EXISTS `users` (
   `profile` varchar (220) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   PRIMARY KEY (`id`)
 ) ENGINE = InnoDB AUTO_INCREMENT = 0 DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
+
+-- Tables: Cotacao
+DROP TABLE IF EXISTS `cotacao`;
+CREATE TABLE IF NOT EXISTS `cotacao` (
+  `pasta` int(11) NOT NULL AUTO_INCREMENT,
+  `cnpj` varchar (220) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `cliente` varchar (220) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `uasg` varchar (220) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `inscricaoEstadual` varchar (220) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `observacoes` varchar (220) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `isentoIE` varchar (220) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `cep` varchar (220) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `rua` varchar (220) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `numero` varchar (220) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `bairro` varchar (220) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `contato1` varchar (220) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `telefone1` varchar (220) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `email1` varchar (220) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `cargoSetor1` varchar (220) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `contato2` varchar (220) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `telefone2` varchar (220) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `email2` varchar (220) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `cargoSetor2` varchar (220) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  PRIMARY KEY (`pasta`)
+) ENGINE = MyISAM AUTO_INCREMENT = 4000 DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
+
+   
+

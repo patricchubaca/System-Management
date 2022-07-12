@@ -18,7 +18,7 @@
       <div class="row g-3 mt-3">
         <div class="col-sm-6">
           <label for="firstName" class="form-label">Marca</label>
-          <input type="text" class="form-control" placeholder="Solid" name="marca"  required>
+          <input type="text" class="form-control" placeholder="Solid" name="marca" value="{{$findProdutos['marca']}}" required>
           <div class="invalid-feedback">
             Valid first name is required.
           </div>

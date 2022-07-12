@@ -90,7 +90,13 @@ class CanaisController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $newMarca=  Portais::find($request->id);
+        $newMarca->portal = $request->portal;
+        $newMarca->site = $request->site;
+        $newMarca->login = $request->login;
+        $newMarca->senha = $request->senha;
+        $newMarca->save();
+       
     }
 
     /**

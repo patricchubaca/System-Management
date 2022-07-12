@@ -93,7 +93,28 @@ class ClientesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $newCliente =  Clientes::find($request->id);
+        $newCliente->cliente = $request->cliente;
+        $newCliente->uasg = $request->usag;
+        $newCliente->cnpj = $request->cnpj;
+        $newCliente->inscricaoEstadual = $request->inscricaoEstadual;
+        $newCliente->isentoIE = $request->isentoIE;
+        $newCliente->observacaoes = $request->observacaoes;
+        $newCliente->rua = $request->rua;
+        $newCliente->bairro = $request->bairro;
+        $newCliente->cidade = $request->cidade;
+        $newCliente->numero = $request->numero;
+        $newCliente->cep = $request->cep;
+        $newCliente->contato1 = $request->contato1;
+        $newCliente->telefone1 = $request->telefone1;
+        $newCliente->email1 = $request->email1;
+        $newCliente->cargoSetor1 = $request->cargoSetor1;
+        $newCliente->contato2 = $request->contato2;
+        $newCliente->telefone2 = $request->telefone2;
+        $newCliente->email2 = $request->email2;
+        $newCliente->cargoSetor2 = $request->cargoSetor2;
+        $newCliente->observacoes = $request->observacoes;
+        $newCliente->save();
     }
 
     /**

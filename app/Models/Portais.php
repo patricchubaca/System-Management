@@ -9,16 +9,13 @@ class Portais extends Model
 {
   use HasFactory;
 
-
   protected $table = 'portais';
 
   protected $primaryKey = 'id';
 
   public $timestamps = false;
 
-
   protected $fillable =[
-
      'id',
      'portal',
      'site',

@@ -90,7 +90,21 @@ class EmpresasController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $newMarca =  Empresas::find($request->id);
+        $newMarca->razaoSocial = $request->razaoSocial;
+        $newMarca->inscricaoEstadual = $request->inscricaoEstadual;
+        $newMarca->cnpj = $request->cnpj;
+        $newMarca->email = $request->email;
+        $newMarca->rua = $request->rua;
+        $newMarca->bairro = $request->bairro;
+        $newMarca->cidade = $request->cidade;
+        $newMarca->numero = $request->numero;
+        $newMarca->cep = $request->cep;
+        $newMarca->telefone = $request->telefone;
+        $newMarca->email = $request->email;
+        $newMarca->save();
+
+
     }
 
     /**

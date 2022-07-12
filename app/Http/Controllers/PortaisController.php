@@ -91,7 +91,10 @@ class PortaisController extends Controller
      */
     public function update(Request $request, Portais $portais)
     {
-        //
+            $newMarca =  Portais::find($request->id);
+            $newMarca->marca = $request->marca;
+            $newMarca->produto = $request->produto;
+            $newMarca->save();
     }
 
     /**

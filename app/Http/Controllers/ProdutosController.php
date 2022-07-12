@@ -73,7 +73,7 @@ class ProdutosController extends Controller
         $findProdutos = $modelProdutos->find($id);
         
         return view('Produtos.editeProduto', compact('findProdutos'));
-        
+
     }
 
     /**
@@ -96,7 +96,10 @@ class ProdutosController extends Controller
      */
     public function update(Request $request, Produtos $produtos)
     {
-        //
+        $newProduto =  Produtos::find($request->id);
+        $newProduto->marca = $request->marca;
+        $newProduto->produto = $request->produto;
+        $newProduto->save();
     }
 
     /**
@@ -108,7 +111,6 @@ class ProdutosController extends Controller
     public function destroy(Produtos $id)
     {
         $destroyProdutos = Produtos::findOrFail($id)->delete();
-
         return $destroyProdutos;
     }
 }

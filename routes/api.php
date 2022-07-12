@@ -9,6 +9,7 @@ use App\Http\Controllers\ProdutosController;
 use App\Http\Controllers\PortaisController;
 use App\Http\Controllers\EmpresasController;
 use App\Http\Controllers\MarcasController;
+use App\Http\Controllers\CotacaoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,6 +23,10 @@ use App\Http\Controllers\MarcasController;
 */
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) { return $request->user(); });
+
+##################### Cotacao #########################
+Route::get('/cotacao', [CotacaoController::class, 'index']);
+Route::delete('/cotacao/{pasta}', [CotacaoController::class, 'destroy']);
 
 ##################### Clientes #########################
 Route::get('/clientes', [ClientesController::class, 'index']);
@@ -46,3 +51,4 @@ Route::delete('/empresas/{id}', [EmpresasController::class, 'destroy']);
 ##################### Marcas #########################
 Route::get('/marcas', [MarcasController::class, 'index']);
 Route::delete('/marcas/{id}', [MarcasController::class, 'destroy']);
+

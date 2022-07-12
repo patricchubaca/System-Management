@@ -16,7 +16,6 @@ class Clientes extends Model
     public $timestamps = false;
 
     protected $fillable = [
-
         'id',
         'cliente',
         'uasg',
@@ -36,7 +35,7 @@ class Clientes extends Model
         'contato2',
         'telefone2',
         'email2',
-        'cargoSetor2', 
-        'observacoes'   
+        'cargoSetor2',
+        'observacoes'
     ];
 }

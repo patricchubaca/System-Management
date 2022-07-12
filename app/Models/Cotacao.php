@@ -11,13 +11,12 @@ class Cotacao extends Model
 
     protected $table = 'cotacao';
 
-    protected $primaryKey = 'id';
+    protected $primaryKey = 'pasta';
 
     public $timestamps = false;
 
     protected $fillable = [
-
-        'id',
+        'pasta',
         'cliente',
         'uasg',
         'cnpj',
@@ -36,7 +35,7 @@ class Cotacao extends Model
         'contato2',
         'telefone2',
         'email2',
-        'cargoSetor2', 
-        'observacoes'   
+        'cargoSetor2',
+        'observacoes'
     ];
 }

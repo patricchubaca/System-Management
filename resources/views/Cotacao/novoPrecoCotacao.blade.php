@@ -9,7 +9,14 @@
             <form class="needs-validation  px-5 py-1 mt-1" method="POST" action="{{ route('storeCotacao') }}">
                 @csrf
                 <div class="alert border">
-                    <h1 class="mx-2 my-2">Cotação</h1>
+                    <h1 class="mx-2 my-2">Preço</h1>
+                </div>
+                <div class="col-md-4">
+                    <label for="firstName" class="form-label">Numero da Pasta :</label>
+                    <input type="text" class="form-control" id="firstName" placeholder="4523" name="marca" required>
+                    <div class="invalid-feedback">
+                        Valid first name is required.
+                    </div>
                 </div>
                 <div class="row g-3 mt-3">
                     <div class="col-sm-6">
@@ -146,8 +153,8 @@
                     </div>
                 </div>
                 <div class="row mt-3">
-                    <a type="button"  href="{{route('cotacaoObjeto')}}" class="btn btn-danger mb-1">Cotação Objeto <i
-                            class="fa-solid fa-arrow-right-long"></i></a>
+                    <button type="button" class="btn btn-danger mb-1">Avançar <i
+                            class="fa-solid fa-arrow-right-long"></i></button>
                 </div>
 
 

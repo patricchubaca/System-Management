@@ -23,7 +23,11 @@ use App\Http\Controllers\EmpresasController;
 */
 Route::get('/', function () { return view('auth.login');});
 
-Route::get('/dashboard', function () { return view('Fornecedores.todosFornecedores');})->middleware(['auth'])->name('dashboard');
+Route::get('/dashboard', function () { return view('Cotacao.todosCotacao');})->middleware(['auth'])->name('dashboard');
+
+Route::get('/cotacaoObjeto', function () { return view('Cotacao.novoObjetoCotacao');})->name('cotacaoObjeto');
+Route::get('/cotacaoPreco', function () { return view('Cotacao.novoPrecoCotacao');})->name('cotacaoPreco');
+
 
 #################################################### clientes #####################################################################
 Route::get('/clientes', function () { return view('Clientes.todosCliente');})->name('dashboardClientes');

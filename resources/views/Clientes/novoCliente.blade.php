@@ -41,7 +41,7 @@
                         </div>
 
                         <div class="col-md-3">
-                            <label for="zip" class="form-label">Inscrição Estadual</label>
+                            <label for="text" class="form-label">Inscrição Estadual</label>
                             <input type="text" class="form-control" id="zip" placeholder="388.108.598.269"
                                 name="inscricaoEstadual" required>
                             <div class="invalid-feedback">

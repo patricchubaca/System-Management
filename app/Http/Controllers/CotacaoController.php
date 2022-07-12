@@ -17,13 +17,12 @@ class CotacaoController extends Controller
         $all = Cotacao::all();
         foreach ($all as $key => $value) {
             $registro = [];
-            $registro['id'] = $value['id'];
-            $registro['cnpj'] = $value['cnpj'];
+            $registro['pasta'] = $value['pasta'];
             $registro['button'] = '
-                <button class="button is-info is-light" onclick="createCotacao(' . $value['id'] . ')">
+                <button class="button is-info is-light" onclick="createCotacao(' . $value['pasta'] . ')">
                     <i class="fa-solid fa-folder-closed"> </i>
                 </button>
-                <button class="button is-danger is-light" onclick="deleteCotacao(' . $value['id'] . ')">
+                <button class="button is-danger is-light" onclick="deleteCotacao(' . $value['pasta'] . ')">
                     <i class="fa-solid fa-trash-can"> </i>
                 </button>
             ';
@@ -90,7 +89,10 @@ class CotacaoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $newMarca = Cotacao::find($request->id);
+        $newMarca->portal = $request->portal;
+        $newMarca->cliente = $request->cliente;
+        $newMarca->save();
     }
 
     /**

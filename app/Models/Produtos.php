@@ -16,7 +16,6 @@ class Produtos extends Model
      public $timestamps = false;
 
     protected $fillable =[
-
          'id',
          'produto',
          'marca'   

@@ -90,7 +90,10 @@ class MarcasController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $newMarca =  Marcas::find($request->id);
+        $newMarca->marca = $request->marca;
+        $newMarca->produto = $request->produto;
+        $newMarca->save();
     }
 
     /**

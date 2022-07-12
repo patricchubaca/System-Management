@@ -16,18 +16,17 @@ class Fornecedores extends Model
     public $timestamps = false;
 
     protected $fillable = [
-
         'id',
         'fornecedor',
         'cnpj',
         'isento',
-        'inscricaoEstadual', 
+        'inscricaoEstadual',
         'observacoes',
-        'bairro', 
+        'bairro',
         'cidade',
         'numero',
         'cep',
-        'rua', 
+        'rua',
         'contato1',
         'telefone1',
         'email1',
